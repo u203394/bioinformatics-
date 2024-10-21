@@ -1,6 +1,6 @@
 ---
 title: "PROJECT"
-author: "Nicole Ramos"
+author: "Nicole Ramos, Clara Planas i Rita Oliva"
 date: "21/10/2024"
 output: html_document
 ---
