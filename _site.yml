@@ -1,7 +1,7 @@
 name: "Project-website"
 output_dir: "docs"  # Este es el directorio de salida donde se generarán los archivos HTML
 navbar:
-  title: "Proyecto Bioinformático de Identificación y Análisis de Genomas Bacterianos"
+  title: "Bioinformatics project: identification and analysis of bacterial genomes"
   left:
     - text: "Introduction"
       href: introduction.html
