@@ -1,0 +1,18 @@
+name: "my-first-rmarkdown-website"
+output_dir: "docs"
+navbar:
+  title: "HOSPITAL AND ICU ADMISSION IN ITALY DUE TO COVID-19"
+  left:
+    - text: "Introduction"
+      href: introduction.html
+    - text: "Methods"
+      href: methods.html
+    - text: "Results and Discussion"
+      href: results&discussion.html
+    - text: "Conclusions"
+      href: conclusion.html
+    - text: "References"
+      href: references.html
+ 
+output:
+  html_document:
