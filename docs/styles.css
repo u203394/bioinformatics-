@@ -1,0 +1,33 @@
+/* Cambiar el fondo de la página a azul pastel */
+body {
+  background-color: white; /* Azul pastel */
+  color: #333333; /* Texto oscuro para un buen contraste */
+}
+
+/* Cambiar el color de los encabezados a un azul más fuerte para destacar */
+h1, h2, h3, h4, h5, h6 {
+  color: #4A90E2; /* Azul más intenso para encabezados */
+}
+
+/* Estilo de los enlaces (en azul pastel suave) */
+a {
+  color: #2D9CDB; /* Azul pastel para los enlaces */
+}
+
+a:hover {
+  color: #0C7D9F; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilo de la barra de navegación */
+.navbar {
+  background-color: #A8D8FF; /* Azul pastel para la barra de navegación */
+}
+
+/* Barra de navegación: color de los enlaces en un tono azul más oscuro */
+.navbar a {
+  color: #4A90E2; /* Azul para los enlaces en la barra */
+}
+
+.navbar a:hover {
+  color: #0C7D9F; /* Azul más oscuro cuando el ratón pasa sobre los enlaces */
+}

@@ -1,5 +1,5 @@
 ---
-title: <font size="5"> <h2> <b> CONCLUSION </b> </h2> </font>
+title: <font size="5"> <h2> <b> CONCLUSIONS </b> </h2> </font>
 output:
   html_document:
     toc: yes

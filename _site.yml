@@ -1,18 +1,21 @@
-name: "my-first-rmarkdown-website"
-output_dir: "docs"
+name: "Project-website"
+output_dir: "docs"  # Este es el directorio de salida donde se generarán los archivos HTML
 navbar:
-  title: "HOSPITAL AND ICU ADMISSION IN ITALY DUE TO COVID-19"
+  title: "Proyecto Bioinformático de Identificación y Análisis de Genomas Bacterianos"
   left:
     - text: "Introduction"
       href: introduction.html
     - text: "Methods"
       href: methods.html
     - text: "Results and Discussion"
-      href: results&discussion.html
+      href: results_discussion.html
     - text: "Conclusions"
-      href: conclusion.html
+      href: conclusions.html
     - text: "References"
       href: references.html
- 
 output:
   html_document:
+    toc: true              # Activa la tabla de contenido
+    toc_depth: 2           # Profundidad de la tabla de contenido
+    theme: "default"       # Tema de la página
+    css: "styles.css"      # Hoja de estilo personalizada (asegúrate de que esté en el mismo directorio)

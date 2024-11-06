@@ -1,0 +1,80 @@
+---
+title: "Proyecto Bioinformático de Identificación y Análisis de Genomas Bacterianos"
+output: 
+  html_document:
+    toc: true              # Activa la tabla de contenido
+    toc_depth: 2           # Profundidad de la tabla de contenido
+    theme: "default"       # Tema de la página
+    css: "styles.css"      # Hoja de estilo personalizada (asegúrate de que esté en el mismo directorio)
+---
+
+# Introduction
+
+**Rita Oliva, Clara Planas y Nicole Ramos**  
+**Fecha:** 21/10/2024
+
+---
+
+## Proyecto de Análisis Metagenómico de Muestras Fecales
+
+En este proyecto nos estamos basando en muestras fecales de una persona, a partir de las cuales se extrae el DNA para realizar diferentes etapas de análisis y así identificar y diferenciar los genomas bacterianos presentes. Concretamente, estamos realizando un análisis metagenómico para identificar y caracterizar estas comunidades bacterianas.
+
+### Objetivos
+
+1. **Shotgun Sequencing**: Se toman fragmentos aleatorios de DNA de la muestra y se secuencian sin una dirección específica. Esto genera short reads del DNA, los cuales serán la base para reconstruir los genomas completos.
+2. **De Novo Assembly**: Hacemos un ensamblaje de los short reads sin un genoma de referencia, lo cual es importante porque muchas bacterias pueden no tener genomas secuenciados previamente. Una vez hecho el ensamblaje, los short reads se unen para formar fragmentos más largos y así formar los contigs.
+3. **Meta-Genomic Binning**: Los contigs obtenidos se clasifican y se agrupan según sus características genómicas. Cada grupo se denomina "bin" y representa una especie o genoma bacteriano diferente de la muestra.
+4. **High-quality MAG**: Selección de bins con un completeness mayor al 90% y menor del 5% de contaminación. Esto nos permite obtener los Metagenome-Assembled Genomes (MAGs) de las especies bacterianas presentes.
+
+---
+
+## Resumen de Secciones
+
+- **Methods**: Explicación detallada de los métodos de secuenciación, ensamblaje y clasificación.
+- **Results and Discussion**: Presentación de los resultados obtenidos en el análisis y su discusión.
+- **Conclusion**: Resumen de los hallazgos y conclusiones generales del estudio.
+- **References**: Bibliografía utilizada en el análisis.
+
+---
+
+# Methods
+
+## Metodología de Secuenciación y Análisis
+
+El proceso experimental comenzó con la obtención de las muestras fecales del paciente y la extracción del ADN. Posteriormente, se procedió a la secuenciación de shotgun, ensamblaje de novo y binning metagenómico, como se detalla a continuación:
+
+- **Shotgun Sequencing**: Se utilizaron tecnologías de secuenciación de última generación para obtener lecturas aleatorias de las muestras.
+- **De Novo Assembly**: Usamos herramientas como SPAdes para ensamblar las secuencias.
+- **Meta-Genomic Binning**: El binning se realizó utilizando herramientas como MetaBAT para clasificar los contigs en bins correspondientes a genomas bacterianos.
+
+---
+
+# Results and Discussion
+
+## Análisis de los MAGs
+
+En este estudio se obtuvieron varios bins con diferentes grados de completitud y contaminación. Los bins seleccionados fueron aquellos con un completeness mayor al 90%. A continuación, se comparan los resultados de los bins seleccionados (2 y 5) con un completeness de 99,4% y 100%, respectivamente.
+
+### Caracterización Funcional
+
+Los MAGs fueron analizados para asignar funciones a los genes presentes, con el objetivo de identificar características funcionales relevantes como la resistencia a antibióticos y la producción de enzimas.
+
+### Clasificación Taxonómica
+
+La clasificación de las especies bacterianas presentes en la muestra se realizó utilizando GTDB, comparando las secuencias con bases de datos de referencia.
+
+## Resultados
+
+Presentación de los resultados de la clasificación y funcionalidad de las especies identificadas.
+
+---
+
+# Conclusion
+
+En este estudio, hemos identificado y caracterizado varias especies bacterianas presentes en una muestra fecal utilizando técnicas avanzadas de bioinformática. Este tipo de análisis metagenómico permite una visión detallada de las comunidades bacterianas sin la necesidad de cultivo, lo que abre nuevas perspectivas para el diagnóstico y tratamiento de diversas condiciones.
+
+---
+
+# References
+
+- Referencias bibliográficas utilizadas para la metodología y discusión de los resultados.
