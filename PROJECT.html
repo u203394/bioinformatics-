@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title>Metagenomic analysis of gut microbial strains</title>
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <script src="PROJECT_files/header-attrs-2.29/header-attrs.js"></script>
+        <script src="PROJECT_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="PROJECT_files/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="PROJECT_files/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="PROJECT_files/navigation-1.1/tabsets.js"></script>
+        <link href="PROJECT_files/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+        <script src="PROJECT_files/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+        <link href="PROJECT_files/bootstrap_material-0.1/bootstrap-material-design.min.css" rel="stylesheet" />
+        <link href="PROJECT_files/bootstrap_material-0.1/ripples.min.css" rel="stylesheet" />
+        <script src="PROJECT_files/bootstrap_material-0.1/material.min.js"></script>
+        <script src="PROJECT_files/bootstrap_material-0.1/ripples.min.js"></script>
+        <link href="PROJECT_files/material-0.1/material.css" rel="stylesheet" />
+        <script src="PROJECT_files/material-0.1/material.js"></script>
+    
+    
+    
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .pages .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .pages .tabset-dropdown > .nav-tabs > li.active > a {
+	  background-color: transparent !important;
+	  color: #000000 !important;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+	  color: #00A698 !important;
+	  font-weight: 300 !important;
+	  font-size: 14px;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+      }
+    </style>
+    
+</head>
+
+<body>
+
+  <div class="header-panel shadow z-2">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-3">
+	  	  <div id="header">
+	    <h1 class="title">Metagenomic analysis of gut microbial strains</h1>
+	    	    	    	  </div>
+	  	</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-fluid main-container">
+    <div class="row">
+
+<nav class="col-xs-3 menu">
+<div id="toc">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#methods">Methods</a></li>
+<li><a href="#results">Results</a></li>
+<li><a href="#conclusiones">Conclusiones</a></li>
+</ul>
+</div>
+</nav>
+      
+<div class="pages col-xs-9">
+
+
+    
+<div class="row">
+
+<div class="col-xs-10">
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>The human microbiota is composed mainly of bacteria but also includes viruses, archaea, molds, yeasts and protozoa. The microorganisms that colonise the human body are located on the skin, in the respiratory, digestive and genitourinary systems, as well as in the secretory glands, such as the mammary, biliary, and sebaceous glands. The gut microbiome is complex and dynamic, with implications for both health and disease. During infancy and due to different factors, such as diet or other external factors, the microbial population develops. Moreover, it is at this stage that a direct relationship has been observed between the acquisition of a varied and stable microbiome and the development of an optimal immune system and resistance to pathogenic infections. Nevertheless, the understanding of the specific bacterial species and their contributions remains incomplete.</p>
+<p>In this study, it is performed a reconstruction and a characterisation of metagenome-assembled genomes (MAGs) from a stool sample (<strong>ARG_B10</strong>) to analyse the gut microbiome of a healthy 1-year-old male, born vaginally in Argentina. In order to identify microbial species and their physiological functions, shotgun metagenomics and bioinformatic tools are used for genome assembly and identification. Nine high-quality MAGs have been identified; however, following strict criteria such as genome completeness (&gt;90%) and contamination (&lt;5%), only <strong><em>Veillonella atypica seminalis</em></strong>, named as <strong>bin.002</strong>, and <strong><em>Bifidobacterium longum</em></strong>, named as <strong>bin.005</strong>, were chosen.</p>
+<p>On the one hand, <strong><em>Veillonella atypica seminalis</em></strong> is a Gram-negative anaerobe bacteria which is part of the oral, gastrointestinal and vaginal microbiota. It transforms lactic acid into short-chain fatty acids, which play an important role in intestinal health. On the other hand, <strong><em>Bifidobacterium longum</em></strong> is a Gram-positive anaerobe bacteria that is also found in the intestinal tract, and, as it is involved in the metabolism of complex carbohydrates such as human milk oligosaccharides, it is among the earliest microbes to colonise the gut and it is the most prevalent in both adult and newborn intestines. In addition, B. longum is recognised for providing probiotic benefits, including enhancing immune response and protection against pathogens.</p>
+<p>As a result of the presence of these two species in the fecal sample, this study aims to identify the functional roles and contributions to health by characterising them. Additionally, comparative analyses of the genomes obtained with the genomes of reference of each species have been carried out to explore evolutionary changes and differences in functional potential.</p>
+<div id="objetivos" class="section level2">
+<h2>Objetivos</h2>
+<p>Este es un subtítulo que aparecerá <strong>anidado</strong> debajo de la sección “Introducción” en la barra lateral.</p>
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<div id="descripción-de-datos" class="section level2">
+<h2>Descripción de Datos</h2>
+<p>Este subtítulo aparecerá bajo “Métodos”.</p>
+</div>
+<div id="análisis-estadístico" class="section level2">
+<h2>Análisis Estadístico</h2>
+<p>Otro subtítulo anidado bajo “Métodos”.</p>
+</div>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<p>This project was conducted using the <strong>ARG_B10</strong> sample, which is a data set result of sequencing a sample of the subject using the Illumina NovaSeq platform. The results aimed to analyse the gut microbiome profile to understand the microbial compositions of the patient, and the relation with health outcomes in early childhood.</p>
+<div id="practical-5" class="section level3">
+<h3>PRACTICAL 5</h3>
+<p>The protocol started with an unprocessed patient sample. Thus, as explained in the methodology section, we used different K-base tools to obtain two high-quality metagenome-assembled genomes (MAGs).</p>
+<p>Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads’ GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).</p>
+<details>
+<summary>
+Figure 1. GC content.
+</summary>
+<img src="P5/GC%20content%20overall%20the%20sequences.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<p>The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level, we did not succeed in enhancing it further.</p>
+<details>
+<summary>
+Figure 2. Sequence conent across the bases.
+</summary>
+<img src="P5/sequence%20content%20across%20the%20bases.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<p>The succeeding step in the protocol was MEGAHIT, resulting in an assembly containing a total of 1922 contigs, with 436 contigs being at least 10,000 bp long. The N50 value was 28.019 suggesting that the assembly is moderately contiguous, with many contigs of smaller size, and, as was previously observed the GC content is relatively high at 54.05%, indicating a good quality.</p>
+<p>Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a &gt;90% completeness and &lt;5% contamination. Hence, the MAGs chosen for the project were bin.002 (<strong>o_Selenomonadales</strong>), with a 99.4% of completeness and 0% of contamination; and bin.005 (<strong>f_Bifidobacteriaceae</strong>) with 100% completeness and 2.42% contamination.</p>
+<details>
+<summary>
+Figure 3.
+</summary>
+<img src="P5/ARG_B10_002__GC.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<details>
+<summary>
+Figure 4.
+</summary>
+<img src="P5/ARG_B10_005__GC.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+</div>
+<div id="practical-6" class="section level3">
+<h3>PRACTICAL 6</h3>
+<p>Once the MAGs were selected, the project proceeds with the identification of the species to which the MAGs correspond, using the Prokka K-base tool. Basically, the genome for the bin.002 contains 2033 predicted genes, with 1984 being protein-coding (1299 have known functions, and specifically 603 of these genes are linked to enzymatic activities), whereas the bin.005 contains 1997 predicted genes, with 1940 being protein-coding (1125 have known functions, and specifically 520 of these genes are linked to enzymatic activities). Hence, as soon as the genome assemblies were annotated, a Batch was executed to create a GenomeSet of the species without specifying the names.</p>
+<details>
+<summary>
+Figure 5.
+</summary>
+<img src="P6/bin.002/tree1_002.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<details>
+<summary>
+Figure 5.
+</summary>
+<img src="P6/bin.002/tree2_002.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<details>
+<summary>
+Figure 6.
+</summary>
+<img src="P6/bin.005/TAXONOM%C3%8DA%201.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<details>
+<summary>
+Figure 7.
+</summary>
+<img src="P6/bin.005/TAXONOM%C3%8DA%202.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<p>The GTDB classifier was then used to taxonomically classify the MAGs and obtain the genome information. The data used for the taxonomic classification was the <strong>ARG_B10_bin002_annotated</strong> and <strong>ARG_B10_bin005_annotated</strong>, which were obtained using the Prokka. So, basically the outcome was the objective taxonomic assignments for the bacterias based on the GTDB. Furthermore, the classification obtained is observed in Table X.</p>
+<p>After obtaining this information, the genomes of reference were searched in GTDB. Then, annotations obtained by Prokka were <strong>GCA_reference_typestrain.002</strong> and <strong>GCA_reference_typestrain.005</strong>. On the one hand, the first one contains 2129 predicted genes, with 2078 being protein-coding (1315 have known functions, and specifically 600 of these genes are linked to enzymatic activities). On the other hand, the second one contains 2032 predicted genes, with 1946 being protein-coding (1134 have known functions, and specifically 495 of these genes are linked to enzymatic activities).</p>
+<p>Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the <strong><em>Veillonella atypica seminalis</em></strong>, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding <strong><em>Bifidobacterium longum</em></strong>, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796.</p>
+</div>
+<div id="practical-7" class="section level3">
+<h3>PRACTICAL 7</h3>
+<p>Following the completion of the last practical and using the annotations obtained using Prokka, this practical aimed to determine the functional categories encoded in the genome of <strong><em>Veillonella atypica seminalis</em></strong> and <strong><em>Bifidobacterium longum</em></strong> as well as the difference compared to the reference genomes of each bacterium.</p>
+<p>As for <strong><em>Veillonella atypica seminalis</em></strong>, it can be observed that for most of the functional categories, the number of genes is the same. However, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained can be observed in Figure X.</p>
+<p>Regarding <strong><em>Bifidobacterium longum</em></strong>, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained are shown in Figure Y.</p>
+<p>Finally, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For <strong><em>Veillonella atypica seminalis</em></strong>, the selected one was from the Stress Response functional category, concretely encoding an organic hydroperoxide resistance transcriptional regulator protein involved in oxidative stress. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth.</p>
+With respect to <strong><em>Bifidobacterium longum</em></strong> the gene selected was from Virulence, Disease and Defense functional category, concretely encoding a signal peptidase I which is involved in proper protein maturation and localization. After performing the alignment between both strains it can be observed that there are some nucleotide changes between the reference and the MAG genome, likewise amino acids changes between the sequences. Thus, the result probably indicates that natural selection has occurred adapting the MAG to adverse conditions in order to be more efficient in producing defense proteins, and therefore, favoring its adaptability and survival.
+<details>
+<summary>
+Figure 8.
+</summary>
+<img src="P7/bin.002/Captura%20de%20pantalla%202024-11-06%20a%20les%2014.49.29.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+</div>
+<div id="practical-8" class="section level3">
+<h3>PRACTICAL 8</h3>
+<p>In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed.</p>
+<p>In the case of <strong><em>Veillonella atypica seminalis</em></strong>, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress.</p>
+<p>In the case of <strong><em>Bifidobacterium longum</em></strong>, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the <strong><em>Bifidobacterium callimiconis</em></strong> and <strong><em>Galliscardovia ingluviei</em></strong> are the ones most evolutively related to the analysed species.</p>
+<details>
+<summary>
+Figure 9.
+</summary>
+<img src="P8/bin.002/Captura%20de%20pantalla%202024-11-18%20a%20les%2020.20.06.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+<details>
+<summary>
+Figure 9.
+</summary>
+<img src="P8/bin.005/Captura%20de%20pantalla%202024-11-20%20a%20las%2011.38.59.png" title="fig:" alt="PEU DE FOTO" />
+</details>
+</div>
+<div id="discussion" class="section level2">
+<h2>Discussion</h2>
+<p>The gut microbiota has been recently considered to be an environmental factor that could contribute to disease development. Therefore, this study provides a comprehensive characterization and analysis of bacterial strains, offering a holistic approach to help determine the genetic composition, functional potential and evolutionary relationships of the bacteria in the sample.</p>
+<p>Firstly, the quality control performed revealed that the first 15 nucleotides of the raw reads exhibited fluctuations, which was indicative of suboptimal sequencing quality in that region. Therefore, by trimming the first 15 nucleotides, the nucleotide distribution was improved, obtaining just the higher-quality reads. Regarding the GC content, although initially it was high, after trimming it persisted optimal, reinforcing the reliability of the data. Furthermore, the sequence quality modifications were necessary to achieve high-quality assemblies with MEGAHIT, resulting in 1922 contigs. Nonetheless, the 28,019 N50 value supplied further support to the quality of the assembly, suggesting that the genome data was sufficiently continuous for downstream analysis.</p>
+<p>MaxBin and CheckM tools were then used for binning and assessing the completeness and contamination of the assembled genomes. As for the binning process, it was achieved with an outstanding accomplishment rate of 96.1%, indicating that most of the sequences were grouped into the nine different metagenomic bins. Moreover, two of these nine metagenomics reads were selected for the study, concretely bin.002 from the Selenomonadales order and bin.005 corresponding to Bifidobacteriaceae family. The selection of the bins was made according to high completeness and low contamination 99,4% and 0% for the first bin and 100% and 2.42% for the other one.</p>
+<p>Regarding the taxonomic classification, using the GTDB it was confirmed that bin.002 corresponds to <strong><em>Veillonella atypica seminalis</em></strong> and bin.005 to <strong><em>Bifidobacterium longum</em></strong>, which corresponds with previously reported results. Afterall, the taxonomic results obtained with the FastANI revealed a close genetic relationship between the MAGs and their reference genomes, specifically 99.2% for <strong><em>Veillonella atypica seminalis</em></strong> and 98.9% for <strong><em>Bifidobacterium longum</em></strong>.</p>
+<p>The functional analysis displayed interesting insights into the metabolic pathways and genetic composition of both bacterial strains. For <strong><em>Veillonella atypica seminalis</em></strong> most of the functional categories aligned with the reference genome, although some differences were observed in some of the categories. Notably, the number of genes encoded in the carbohydrates functional category was superior in the target strain compared to the reference. This result could indicate that the presence of adaptations in our strain were caused by microbiome or host interactions. Similarly, <strong><em>Bifidobacterium longum</em></strong> showed in the majority of functional categories the same number of genes as the reference organism, nonetheless in certain categories some different number coding genes were found. In the end, these results emphasise the genomic variation within the species and may also indicate strain-specific adaptations.</p>
+<p>Going further with the analysis, the genetic variability was explored by performing a pairwise sequence alignments of selected genes. Specifically, for the <strong><em>Veillonella atypica seminalis</em></strong> the encoding gene selected was an organic hydroperoxide resistance transcriptional regulator, which revealed nucleotide and amino acid changes between the MAG and reference genome. So again, it is reflected that a natural selection process may have occurred to the target strain, enabling the strain to adapt to oxidative stress conditions. Likewise, the signal peptidase I protein of <strong><em>Bifidobacterium longum</em></strong> also displayed nucleotide and amino acid variations, indicating that the strain has undergone selection pressures that have allowed it to enhance its defense systems and adapt to harsh environments. Finally, by carrying out a phylogenetic analysis, it has been possible to reaffirm the results obtained previously. Furthermore, this analysis has enables to obtain an additional context of the evolutionary history of the selected genes. In <strong><em>Veillonella atypica seminalis</em></strong>, the protein studied has been grouped within a clade that contains other proteins from the same family of organisms belonging to the Veillonellaceae family. This allows us to corroborate that there is a high conservation, due to the crucial role of this protein in resistance to oxidative stress. Similarly, in <strong><em>Bifidobacterium longum</em></strong> it has been observed that the protein studied is related to homologous genes of species such as B. callimiconis and Galliscardovia ingluviei, highlighting the importance of evolutionary pressures on genomic adaptations.</p>
+<p>(FALTA ÚLTIM PARÀGRAF)</p>
+</div>
+</div>
+<div id="conclusiones" class="section level1">
+<h1>Conclusiones</h1>
+<p>Sección principal para el cierre.</p>
+</div>
+</div>
+
+<div class="col-xs-2">
+
+
+</div>
+</div>
+	
+
+
+</div>
+</div>
+
+ <script>
+    $(document).ready(function () {
+	// add bootstrap table styles to pandoc tables
+	$('tr.header').parent('thead').parent('table').addClass('table table-striped table-hover');
+	
+		var images = $('.pages img');
+	images.filter(function() {
+	    if ($(this).parent().attr("class") == "figure") {
+		return(false)
+	    } else {
+		return(true);
+	    }
+	}).wrap("<div class='figure'></div>");
+	images.addClass("image-thumb").wrap("<div class='panel-body'></div>");
+	$('.figure p.caption').wrap("<div class='panel-footer'></div>");
+	$('.figure').addClass('panel panel-default');
+	
+		$('.pages img').addClass("image-lb");
+	$('.pages').magnificPopup({
+	    type:'image',
+	    closeOnContentClick: false,
+	    closeBtnInside: false,
+            delegate: '.image-lb',
+	    gallery: {enabled: false },
+            removalDelay: 500,
+            callbacks: {
+		beforeOpen: function() {
+                    // just a hack that adds mfp-anim class to markup
+                    this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+		}
+            },
+            mainClass: 'mfp-move-from-top',
+	    image: {
+	        verticalFit: true,
+		titleSrc: 'alt'
+	    }
+ 	});
+ 	
+	  
+	$('#toc ul li').first().addClass("active");
+	$('#toc ul li').attr("data-target", function() {
+            return($(this).children("a").attr("href"));
+	})
+	$('body .section.level1').first().addClass("active");
+	$('body .section.level1').not('.active').hide();
+	
+	$('#toc a[href*="#"], a[href^="#"]').not('.nav a[href^="#"]').click(function() {
+	    var id = $(this).attr("href");
+	    if (id === "#") return;
+	    if (id.substring(0, 8) === "#dyntab-") return;
+	    // Menu
+	    var menu_entry = $(".menu li[data-target='"+id+"']");
+	    if (menu_entry.length == 0) {
+			window.location.hash = id;
+			return;
+	    }
+	    menu_entry.addClass("active");
+	    $(".menu li").not(menu_entry).removeClass("active"); 
+	    toggle_page(id);
+	});
+
+	function toggle_page(id) {
+	    $(".page").not(page).removeClass("active").hide();
+	    window.page = id;
+	    var page = $(window.page);
+	    window.location.hash = window.page;
+	    //$(this).addClass("active");
+	    page.show();
+
+	    var totop = setInterval(function () {
+		$(".pages").animate({scrollTop: 0}, 0);
+	    }, 10);
+
+	    setTimeout(function () {
+			page.addClass("active");
+			setTimeout(function () {
+		    	clearInterval(totop);
+			}, 1000);
+	    }, 100);
+	    
+	    window.dispatchEvent(new Event('resize'));
+	}
+
+
+	$(".menu li").click(function () {
+	    toggle_page($(this).data("target"));
+	    // Menu
+	    if (!$(this).data("target")) return;
+	    if ($(this).is(".active")) return;
+	    $(".menu li").not($(this)).removeClass("active");
+	    $(this).addClass("active");
+	});
+  
+	  
+	window.page = window.location.hash;
+	if (window.page != "") {
+	    $(".menu").find("li[data-target='" + window.page + "']").trigger("click");
+	}
+	/* init material bootstrap js */
+	$.material.init();
+    });
+ </script>
+
+
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+ <script>
+   (function () {
+       var script = document.createElement("script");
+       script.type = "text/javascript";
+       script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+       document.getElementsByTagName("head")[0].appendChild(script);
+   })();
+ </script>
+ 
+</body>
+</html>
