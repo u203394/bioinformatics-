@@ -17,10 +17,6 @@ On the one hand, *Veillonella atypica seminalis* is a Gram-negative anaerobe bac
 As a result of the presence of these two species in the fecal sample, this study aims to identify the functional roles and contributions to health by characterising them. Additionally, comparative analyses of the genomes obtained with the genomes of reference of each species have been carried out to explore evolutionary changes and differences in functional potential.
 
 
-## Objetivos
-
-Este es un subtítulo que aparecerá **anidado** debajo de la sección "Introducción" en la barra lateral.
-
 # Methods
 
 The methods used to achieve the objectives of the project are described below. It was divided into four parts.
@@ -165,13 +161,17 @@ Finally, a FastANI was computed to assess the nucleotide identity between the ta
 
 Following the completion of the last practical and using the annotations obtained using Prokka, this practical aimed to determine the functional categories encoded in the genome of *Veillonella atypica seminalis* and *Bifidobacterium longum* as well as the difference compared to the reference genomes of each bacterium.
 
-As for *Veillonella atypica seminalis*, it can be observed that for most of the functional categories, the number of genes is the same. However, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained can be observed in Figure X. 
+As for *Veillonella atypica seminalis*, it can be observed that for most of the functional categories, the number of genes is the same. However, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained can be observed in Figure part 1 002.
 
-Regarding *Bifidobacterium longum*, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained are shown in Figure Y. 
+Regarding *Bifidobacterium longum*, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome. The results obtained are shown in Figure part 1 005.
 
-Finally, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*,  the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress**. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. 
+Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*,  the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress**. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure part 2 002). 
  
-With respect to *Bifidobacterium longum* the gene selected was from **Virulence**, **Disease** and **Defense functional** category, concretely encoding a **signal peptidase I** which is involved in proper protein maturation and localization. After performing the alignment between both strains it can be observed that there are some nucleotide changes between the reference and the MAG genome, likewise amino acids changes between the sequences. Thus, the result probably indicates that natural selection has occurred adapting the MAG to adverse conditions in order to be more efficient in producing defense proteins, and therefore, favoring its adaptability and survival. <details>
+With respect to Bifidobacterium longum the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division. After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome, however there aren’t changes between the in amino acid sequence. Thus, the result probably indicates that this protein has an essential role for the cell, and therefore, the sequence is conserved, to preserve the properties and functions of the protein. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are the same.  
+
+Finally, the functional diversity of the genes and RNAs of the Veillonella atypical seminalis and Bifidobacterium longum, could be observed in Figure part 3 002 and Figure part 3 005. Concretely, a clear tendency is evident in both figures, the majority of the genes correspond to mRNA, which encode for proteins. Within this group,  a smaller subset encodes hypothetical proteins. In contrast, the number of tRNA, and especially rRNAs, is significantly lower. These results indicate a predominance of genes involved in protein coding over those associated with the structural and functional roles of RNAs.
+
+
   <summary> Figure 8. </summary>
   ![PEU DE FOTO](P7/bin.002/Captura de pantalla 2024-11-06 a les 14.49.29.png)
 </details>
