@@ -8,162 +8,537 @@ cites: yes
 link-citations: yes
 ---
 
-<h1 style="font-size: 2.1em; color: white;">Metagenomic analysis of gut microbial strains</h1>
+<h1 style="font-size: 2.1em; color: white;">
+
+Metagenomic analysis of gut microbial strains
+
+</h1>
 
 <span style="font-size: 0.8em; color: white !important;">Rita Oliva, Clara Planas, and Nicole Ramos
 
 </span>
 
-
 # Introduction
-<div style="font-size: 12px; text-align: justify;">
+
+::: {style="font-size: 12px; text-align: justify;"}
 The human microbiota is composed mainly of bacteria but also includes viruses, archaea, molds, yeasts and protozoa. The microorganisms that colonise the human body are located on the skin, in the respiratory, digestive and genitourinary systems, as well as in the secretory glands, such as the mammary, biliary, and sebaceous glands [@Requena2021]. The gut microbiome is complex and dynamic, with implications for both health and disease. During infancy and due to different factors, such as diet or other external factors, the microbial population develops. Moreover, it is at this stage that a direct relationship has been observed between the acquisition of a varied and stable microbiome and the development of an optimal immune system and resistance to pathogenic infections. Nevertheless, the understanding of the specific bacterial species and their contributions remains incomplete.
 
-In this study, it is performed a reconstruction and a characterisation of metagenome-assembled genomes (MAGs) from a stool sample (**ARG_B10**) to analyse the gut microbiome of a healthy 1-year-old male, born vaginally in Argentina. In order to identify microbial species and their physiological functions, shotgun metagenomics and bioinformatic tools are used for genome assembly and identification. Nine high-quality MAGs have been identified; however, following strict criteria such as genome completeness (>90%) and contamination (<5%), only ***Veillonella atypica seminalis***, named as **bin.002**, and ***Bifidobacterium longum***, named as **bin.005**, were chosen.
+In this study, it is performed a reconstruction and a characterisation of metagenome-assembled genomes (MAGs) from a stool sample (**ARG_B10**) to analyse the gut microbiome of a healthy 1-year-old male, born vaginally in Argentina. In order to identify microbial species and their physiological functions, shotgun metagenomics and bioinformatic tools are used for genome assembly and identification. Nine high-quality MAGs have been identified; however, following strict criteria such as genome completeness (>90%) and contamination (\<5%), only ***Veillonella atypica seminalis***, named as **bin.002**, and ***Bifidobacterium longum***, named as **bin.005**, were chosen.
 
 On the one hand, *Veillonella atypica seminalis* is a Gram-negative anaerobe bacteria which is part of the oral, gastrointestinal and vaginal microbiota. It transforms lactic acid into short-chain fatty acids, which play an important role in intestinal health [@Mashima2013]. On the other hand, *Bifidobacterium longum* is a Gram-positive anaerobe bacteria that is also found in the intestinal tract, and, as it is involved in the metabolism of complex carbohydrates such as human milk oligosaccharides, it is among the earliest microbes to colonise the gut and it is the most prevalent in both adult and newborn intestines [@Yao2021]. In addition, *Bifidobacterium longum* is recognised for providing probiotic benefits, including enhancing immune response and protection against pathogens.
 
 As a result of the presence of these two species in the fecal sample, this study aims to identify the functional roles and contributions to health by characterising them. Additionally, comparative analyses of the genomes obtained with the genomes of reference of each species have been carried out to explore evolutionary changes and differences in functional potential.
-</div>
+:::
 
 # Methods
-<div style="font-size: 12px; text-align: justify;">
-The methods used to achieve the objectives of the project are described below. It was divided into four parts.
-In the first part, sequencing data that contained multiple sequences from different organisms were obtained, and genomes were reconstructed to later be separated into different species or organisms.
-In the second part, a taxonomic identification of the bacterial genomes in the sample was done. In order to achieve this, the MAGs from the sample were compared to reference ones using a database. The main objectives of this part were:
 
-- To find the species to which the MAG belongs
-- To obtain the genome from the type strain of the MAG
-- To compute the nucleotide identity between the two
+::: {style="font-size: 12px; text-align: justify;"}
+The methods used to achieve the objectives of the project are described below. It was divided into four parts. In the first part, sequencing data that contained multiple sequences from different organisms were obtained, and genomes were reconstructed to later be separated into different species or organisms. In the second part, a taxonomic identification of the bacterial genomes in the sample was done. In order to achieve this, the MAGs from the sample were compared to reference ones using a database. The main objectives of this part were:
 
-In the third part, the functional categories of the genes from the sample genomes and their respective type strain were compared. Rstudio was fundamental in this process. 
+-   To find the species to which the MAG belongs
+-   To obtain the genome from the type strain of the MAG
+-   To compute the nucleotide identity between the two
 
-In the last part, a specific gene present in *Veillonella atypica seminalis* (**bin.002**) and *Bifidobacterium longum* (**bin.005**) that was not the same as the type strain, was selected. From that, a phylogenetic tree was reconstructed and it brought together 20 different species from the same family, plus the proteins of interest (from 002 and 005). This allowed to compare the differences between species and their phylogenetic organisation. 
+In the third part, the functional categories of the genes from the sample genomes and their respective type strain were compared. Rstudio was fundamental in this process.
 
+In the last part, a specific gene present in *Veillonella atypica seminalis* (**bin.002**) and *Bifidobacterium longum* (**bin.005**) that was not the same as the type strain, was selected. From that, a phylogenetic tree was reconstructed and it brought together 20 different species from the same family, plus the proteins of interest (from 002 and 005). This allowed to compare the differences between species and their phylogenetic organisation.
 
-### Practical 5: Assembly of a bacterial genome 
+### Practical 5: Assembly of a bacterial genome
 
 In the first part of the project, different steps were performed to finally obtain an assembled genome. From this, the different organisms present in the sample could be identified. The different steps and the tools used for each were:
 
-- Sequencing read QC (FastQC)
-- Trimming (Trimmomatic)
-- Sequencing read QC (FastQC)
-- Assembly (MEGAHIT)
-- Binning (MaxBin)
-- MAG QC (CheckM)
+-   Sequencing read QC (FastQC)
+-   Trimming (Trimmomatic)
+-   Sequencing read QC (FastQC)
+-   Assembly (MEGAHIT)
+-   Binning (MaxBin)
+-   MAG QC (CheckM)
 
-Once the sequencing results in FASTQ output files that contain the sequencing reads of interest were obtained, a quality control was performed to evaluate the state of our data to make sure that the results obtained were reliable and accurate. 
+Once the sequencing results in FASTQ output files that contain the sequencing reads of interest were obtained, a quality control was performed to evaluate the state of our data to make sure that the results obtained were reliable and accurate.
 
-Firstly, the sequence was examined to identify which parts could be improved. To enhance the quality of the sample it was used Trimmomatic, which helped remove the low quality parts of the read by trimming the sequencing data. In particular, different numbers of nucleotides were trimmed until it was found that 15 nucleotides was the optimal number to make the quality of our sequences optimal. Then, the quality control step was done again to verify if there had been an improvement in the sequencing data. 
+Firstly, the sequence was examined to identify which parts could be improved. To enhance the quality of the sample it was used Trimmomatic, which helped remove the low quality parts of the read by trimming the sequencing data. In particular, different numbers of nucleotides were trimmed until it was found that 15 nucleotides was the optimal number to make the quality of our sequences optimal. Then, the quality control step was done again to verify if there had been an improvement in the sequencing data.
 
-Secondly, an assembly was performed, reconstructing the genome  from the raw sequencing reads. Before carrying out the complete genome reconstruction, the fragments were combined to make longer regions of DNA. These larger regions are named contigs, they do not cover the entire genome and may also contain gaps, in consequence the read quality is not optimal. To perform the assembly it was used the MEGAHIT tool, since it is a single node assembler used for large and complex metagenomic reads, ideal for the sample. 
+Secondly, an assembly was performed, reconstructing the genome from the raw sequencing reads. Before carrying out the complete genome reconstruction, the fragments were combined to make longer regions of DNA. These larger regions are named contigs, they do not cover the entire genome and may also contain gaps, in consequence the read quality is not optimal. To perform the assembly it was used the MEGAHIT tool, since it is a single node assembler used for large and complex metagenomic reads, ideal for the sample.
 
 Once the contigs were generated, metagenomic binning was performed in order to identify and group the different contigs. This process generates "bins" which correspond to different species that were present in the sample. This is possible because the different contigs from the same species present similarities in the nucleotide composition. This binning process allowed to organise the scattered contigs that probably came from multiple species and reconstruct genomes that belonged to each organism individually.
 
-When the contigs were grouped in different bins, the Metagenome-Assembled Genome (MAG) was performed, which is used when a partial or complete genome has been reconstructed and there is a need to identify which organisms are present. To complete this step, the quality of the MAG was assessed by defining the completeness, checking if there are the genes that were expected, and estimating which of the genes were actually found. In addition, contamination was detected by identifying if DNA from other microorganisms was present in the assembled genome and if the number of single copy genes in the genome was present more than once. 
+When the contigs were grouped in different bins, the Metagenome-Assembled Genome (MAG) was performed, which is used when a partial or complete genome has been reconstructed and there is a need to identify which organisms are present. To complete this step, the quality of the MAG was assessed by defining the completeness, checking if there are the genes that were expected, and estimating which of the genes were actually found. In addition, contamination was detected by identifying if DNA from other microorganisms was present in the assembled genome and if the number of single copy genes in the genome was present more than once.
 
-Depending on the percentage of completeness and contamination it was possible to determine whether it was a high-quality MAG or a medium-quality one. If it was more than 90% of completeness and less than 5% of contamination it would be a high-quality MAG. If, on the other hand, it was more than 50% of completeness and less than 5% of contamination it would be a medium-quality MAG. From the MAGs obtained two were chosen, bin.002 and bin.005, since they had a high percentage of completeness (over 95%), therefore, they were two high-quality MAGs. 
+Depending on the percentage of completeness and contamination it was possible to determine whether it was a high-quality MAG or a medium-quality one. If it was more than 90% of completeness and less than 5% of contamination it would be a high-quality MAG. If, on the other hand, it was more than 50% of completeness and less than 5% of contamination it would be a medium-quality MAG. From the MAGs obtained two were chosen, bin.002 and bin.005, since they had a high percentage of completeness (over 95%), therefore, they were two high-quality MAGs.
 
 To carry out all these steps KBase, a platform that enables data uploading for further manipulation and analysis by using workflows, was used. Different narratives were created for the different approaches done.
 
-
 ### Practical 6: Database search and taxonomic identification of a bacterial genome
 
-In this part of the project the two MAGs obtained bin.002 and bin.005, were identified and classified by taxonomy, which characterises the organism by description, identification, nomenclature and classification. In order to do this, the MAGs were compared to a reference genome obtained through the genome taxonomy database (GTDB). 
+In this part of the project the two MAGs obtained bin.002 and bin.005, were identified and classified by taxonomy, which characterises the organism by description, identification, nomenclature and classification. In order to do this, the MAGs were compared to a reference genome obtained through the genome taxonomy database (GTDB).
 
-For this part a new Narrative was created, then the MAGs were added into it and using Prokka the genome was annotated. Prokka is used for annotating a sequenced genome identifying the functional regions of the DNA and assigning them a biological function. After this procedure, two annotated genomes were obtained: **ARG_B10_bin002_annotated** and **ARG_B10_bin005_annotated**. 
+For this part a new Narrative was created, then the MAGs were added into it and using Prokka the genome was annotated. Prokka is used for annotating a sequenced genome identifying the functional regions of the DNA and assigning them a biological function. After this procedure, two annotated genomes were obtained: **ARG_B10_bin002_annotated** and **ARG_B10_bin005_annotated**.
 
-Then, a genome set using the Batch command was created in order to group the genomes and organise them to facilitate further analysis. This is useful to compare multiple genomes within the same study. Afterwards the GTDB classifier was used to find to which species our MAGs belonged and to classify them taxonomically. For this, it was essential to find the type strain of our species by consulting the genome taxonomy database and downloading it as a FASTA sequence. Subsequently, that FASTA sequence  was imported into KBase and then a Fast Average Nucleotide Identify (FastANI) between our MAG and the downloaded type strain genome was performed, which corresponds to the reference genome. 
+Then, a genome set using the Batch command was created in order to group the genomes and organise them to facilitate further analysis. This is useful to compare multiple genomes within the same study. Afterwards the GTDB classifier was used to find to which species our MAGs belonged and to classify them taxonomically. For this, it was essential to find the type strain of our species by consulting the genome taxonomy database and downloading it as a FASTA sequence. Subsequently, that FASTA sequence was imported into KBase and then a Fast Average Nucleotide Identify (FastANI) between our MAG and the downloaded type strain genome was performed, which corresponds to the reference genome.
 
-FastANI is used for bacterial species definition. This tool gave an estimation using an alignment-free approximate sequence mapping. It is usually used to compare the similarities between two different genomes based on the DNA sequences that are present in both organisms by studying nucleotide composition. In addition, it verifies the taxonomic identity. If the ANI between the genome from the sample and the reference one is higher than 95%, they probably correspond to the same species. If, on the contrary, the ANI is lower than 95%, the genomes do not correspond to the same species. 
-
+FastANI is used for bacterial species definition. This tool gave an estimation using an alignment-free approximate sequence mapping. It is usually used to compare the similarities between two different genomes based on the DNA sequences that are present in both organisms by studying nucleotide composition. In addition, it verifies the taxonomic identity. If the ANI between the genome from the sample and the reference one is higher than 95%, they probably correspond to the same species. If, on the contrary, the ANI is lower than 95%, the genomes do not correspond to the same species.
 
 ### Practical 7: Genome annotation
 
-The main objective of this part of the project is to compare the biological functions between *Veillonella atypica seminalis* (**ARG_B10_bin002_annotated**) and *Bifidobacterium longum* (**ARG_B10_bin005_annotated**) and their respective type strains. 
+The main objective of this part of the project is to compare the biological functions between *Veillonella atypica seminalis* (**ARG_B10_bin002_annotated**) and *Bifidobacterium longum* (**ARG_B10_bin005_annotated**) and their respective type strains.
 
-This was done thanks to the Prokka tool. It was used again to annotate the reference genomes. This, as mentioned before, is useful to identify features of interest in a set of genome DNA sequences and label them with useful information. It is characterised by its effectiveness. 
+This was done thanks to the Prokka tool. It was used again to annotate the reference genomes. This, as mentioned before, is useful to identify features of interest in a set of genome DNA sequences and label them with useful information. It is characterised by its effectiveness.
 
-The output of this process was the number of genes found in our genomes and in the respective type strains. The result was a table which showed the functional categories of the genes and the comparison of the differences between the ones encoded in the genome of our sample and the ones of the reference. In order to do this comparison, Rstudio was used to plot these differences. 
+The output of this process was the number of genes found in our genomes and in the respective type strains. The result was a table which showed the functional categories of the genes and the comparison of the differences between the ones encoded in the genome of our sample and the ones of the reference. In order to do this comparison, Rstudio was used to plot these differences.
 
-In Rstudio, **table_002** and **table_005** were created, allowing the read of functional categories of the genome and their respective values. This command generated data frames where the data was stored. To facilitate the analysis, the ggplot2 library was used in order to visualise the data and plot the graphics for further comparison between genomes. The reshape2 library was also employed. This helped  to reorganise the data and facilitate analysis and visualisation. Lastly, the plots were runned and the differences of interest between genomes were compared.
+In Rstudio, **table_002** and **table_005** were created, allowing the read of functional categories of the genome and their respective values. This command generated data frames where the data was stored. To facilitate the analysis, the ggplot2 library was used in order to visualise the data and plot the graphics for further comparison between genomes. The reshape2 library was also employed. This helped to reorganise the data and facilitate analysis and visualisation. Lastly, the plots were runned and the differences of interest between genomes were compared.
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;">**Code 1. R code to compare the Veillonella atypica seminalis with the reference genome.**
+
+</summary>
+
+```{r eval=FALSE}
+library(ggplot2)
+
+category <- c("Carbohydrates","Respiration", "Nucleosides and nucleotides", "Stress response","Protein Metabolism", "Regulation and Cell signalling","Cell Wall and Capsule","Miscellaneous","Photosynthesis","RNA Metabolism","Metabolism of Aromatic Compounds","Clustering-based subsystems","Phosphorus Metabolism","Phages, Prophages, Transposable elements","Secondary Metabolism","Dormancy and Sporulation","Amino Acids and Derivatives","Iron acquisition and metabolism","Phages, Prophages, Transposable elements, Plasmids","Cell Division and Cell Cycle","Membrane Transport","Nitrogen Metabolism","Sulfur Metabolism","DNA Metabolism","Cofactors, Vitamins, Prosthetic Groups, Pigments","Fatty Acids, Lipids, and Isoprenoids","Virulence, Disease and Defense","Potassium metabolism","Motility and Chemotaxis","Virulence")
+
+case_002 <- c(14,1,3,9,7,1,1,0,0,2,0,10,0,0,0,2,5,1,0,8,1,2,0,15,3,2,3,4,0,0)
+reference <- c(10,1,3,9,7,1,1,0,0,1,0,10,0,0,0,2,5,1,0,8,3,2,0,19,3,2,4,4,0,0)
+
+library(reshape2)
+info <- data.frame(
+  category = category,
+  case_002 = case_002,
+  reference = reference
+)
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+boxplot1 <- ggplot(info.m, aes(fill = variable, x = value, y = category)) + 
+  geom_bar(position = "dodge", stat = "identity", color = "black", width = 0.7) + 
+  scale_fill_manual(
+    values = c("skyblue", "slateblue"), 
+    labels = c("Veillonella atypica seminalis", "Reference"),
+    name = "Strain"                          
+  ) + 
+  labs(title = "FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS", x = "Values", y = "Category") + 
+  theme_minimal() + 
+  theme(
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.6)
+  ) + 
+  geom_text(aes(label = value), position = position_dodge(width = 0.8), hjust = -0.2, size = 2.1)
+
+print(boxplot1) 
+
+ggsave("box_plot.png", plot = boxplot1, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;">**Code 2. R code to compare the Bifidobacterium longum with the reference genome**
+
+</summary>
+
+```{r eval=FALSE}
+library(ggplot2)
+category <- c("Carbohydrates","Respiration", "Nucleosides and nucleotides", "Stress response","Protein Metabolism", "Regulation and Cell signaling","Cell Wall and Capsule","Miscellaneous","Photosynthesis","RNA Metabolism","Metabolism of Aromatic Compounds","Clustering-based subsystems","Phosphorus Metabolism","Phages, Prophages, Transposable elements","Secondary Metabolism","Dormancy and Sporulation","Amino Acids and Derivatives","Iron acquisition and metabolism","Phages, Prophages, Transposable elements, Plasmids","Cell Division and Cell Cycle","Membrane Transport","Nitrogen Metabolism","Sulfur Metabolism","DNA Metabolism","Cofactors, Vitamins, Prosthetic Groups, Pigments","Fatty Acids, Lipids, and Isoprenoids","Virulence, Disease and Defense","Potassium metabolism","Motility and Chemotaxis","Virulence")
+
+case_005 <-  c(9,1,0,3,7,0,0,0,0,6,0,6,2,0,0,0,3,0,0,5,3,1,0,16,0,0,1,1,1,0)
+reference <- c(9,1,0,3,7,0,0,0,0,6,0,5,2,0,0,0,3,0,0,4,2,1,0,14,0,0,1,1,1,0)
+
+library(ggplot2)
+library(reshape2)
+
+info <- data.frame(
+  category = category,
+  case_005 = case_005,
+  reference = reference
+)
+
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+library(ggplot2)
+library(reshape2)
+
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+boxplot2 <- ggplot(info.m, aes(fill = variable, x = value, y = category)) +
+  geom_bar(position = "dodge", stat = "identity", color = "black", width = 0.7) +
+  scale_fill_manual(
+    values = c("skyblue", "slateblue"),
+    labels = c("Bifidobacterium longum", "Reference"),    # Legend labels
+    name = "Strain"                          # Legend title
+  ) +
+  labs(title = "FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS", x = "Values", y = "Category") +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.55)
+  ) +
+  geom_text(aes(label = value), position = position_dodge(width = 0.8), hjust = -0.2, size = 3)
+
+print(boxplot2)
+
+ggsave("box_plot2.png", plot = boxplot1, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
 
 Besides, a functional category for each bacteria was chosen for further studies. In the case of *Veillonella atypica seminalis* was stress resistance, whereas in the case of *Bifidobacterium longum* was virulence, disease and defence. For this part the annotated genomes with Prokka were used to obtain the nucleotide and amino acid sequence of the gene selected. Then, using the MAFFT programme, the nucleotide and amino acid sequences were aligned. Finally, by the Jalview website, the results were visualised.
 
+Moreover, using Rstudio a comparison of the genes encoding for the functional category was made, in order to observe whether there were differences between the genes encoded in the reference and target genomes. Lastly, the GFF + FASTA files for each genome were downloaded from KBase, and imported to Rstudio to analyze the GFF file, creating different variables in which tRNA, mRMA, rRNA and hypothetical proteins were counted, specifically, what the program counts are the lines where these are mentioned, and, after obtaining these results a barplot was printed for *Veillonella atypica seminalis* and *Bifidobacterium longum*.
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Code 3. R code to compare the genes encoded within the Stress response functional category for Veillonella atypica seminalis**
+
+</summary>
+
+```{r eval=FALSE}
+category <- c("Stress response", "Oxidative stress", "Oxidative_stress", 
+               "Heat Shock",
+               "Ferric uptake regulator protein", 
+               "Organic hydroperoxidase resistance 
+               transcriptional regulator", 
+               "Rubrerythrin")
+
+case_002 <- c(9, 6, 3, 0, 1, 1, 1)
+reference <- c(9, 6, 3, 3, 0, 0, 0)
+
+info <- data.frame(
+  category = category,
+  case_002 = case_002,
+  reference = reference
+)
+
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+
+info.m$category <- factor(info.m$category, levels = rev(category))
+
+boxplot3 <- ggplot(info.m, aes(fill = variable, x = value, y = category)) + 
+  geom_bar(position = "dodge", stat = "identity", color = "black", width = 0.7) + 
+  scale_fill_manual(
+    values = c("skyblue", "slateblue"), 
+    labels = c("Veillonella atypica seminalis", "Reference"),    
+    name = "Strain"                        
+  ) + 
+  labs(
+    title = "DIFFERENCE IN THE GENES FOUND IN STRESS RESPONSE CATEGORY", 
+    x = "Values", 
+    y = "Type of genes"
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.y = element_text(size = 9),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 10, face = "bold", hjust = 0.5), 
+    legend.position = "right" 
+  ) + 
+  geom_text(aes(label = value), position = position_dodge(width = 0.8), hjust = -1, size = 2.5)
+
+print(boxplot3)
+
+ggsave("box_plot3.png", plot = boxplot3, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Code 4. R code to compare the genes encoded within the clustering based subsystems functional category for** ***Bifidobacterium longum***
+
+</summary>
+
+```{r eval=FALSE}
+category <- c(
+  "Clustering-based subsystems",
+  "---Clustering-based subsystems---",
+  "NusA-TFII",
+  "LMPTP_YwIE_cluster",
+  "Bacterial cell division",
+  "Cell division protein FtsQ",
+  "Cell division protein FstX"
+)
+
+case_005 <- c(5, 4, 1, 1, 2, 1, 1)
+reference <- c(5, 4, 1, 1, 2, 1, 1)
+
+info <- data.frame(
+  category = category,
+  case_005 = case_005,
+  reference = reference
+)
+
+info.m <- melt(info, id.vars = "category")
+info.m <- subset(info.m, value != 0)
+
+info.m$category <- factor(info.m$category, levels = rev(category))
+
+# Create chart with centered title and adjusted numbers on the bars
+boxplot4 <- ggplot(info.m, aes(fill = variable, x = value, y = category)) + 
+  geom_bar(position = "dodge", stat = "identity", color = "black", width = 0.7) + 
+  scale_fill_manual(
+    values = c("skyblue", "slateblue"), 
+    labels = c("Bifidobacterium longum", "Reference"),    # Etiquetas de la leyenda
+    name = "Strain"                        # Título de la leyenda
+  ) + 
+  labs(
+    title = "DIFFERENCE IN THE GENES FOUND IN CLUSTERING BASED SUBSYSTEMS CATEGORY", 
+    x = "Values", 
+    y = "Type of genes"
+  ) + 
+  theme_minimal() + 
+  theme(
+    axis.text.y = element_text(size = 9),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    plot.title = element_text(size = 10, face = "bold", hjust = 0.5), 
+    legend.position = "right" 
+  ) + 
+  geom_text(aes(label = value), position = position_dodge(width = 0.9), hjust = -1, size = 2.5)
+
+print(boxplox4) 
+
+ggsave("box_plot4.png", plot = boxplot4, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Code 5. R code to compare the coding and non-coding genes of** ***Veillonella atypica seminalis***
+
+</summary>
+
+```{r eval=FALSE}
+gff_data002 <- read.table("KBase_derived_ARG_B10_bin_002_annotated.gff", sep = "\t", header = FALSE, quote = "")
+
+colnames(gff_data002) <- c("seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute")
+
+tRNA_count002 <- nrow(gff_data002[grep("tRNA", gff_data002$attribute), ])
+
+rRNA_count002 <- nrow(gff_data002[grep("rRNA", gff_data002$attribute), ])
+
+hypothetical_count002 <- nrow(gff_data002[grep("hypothetical protein", gff_data002$attribute), ])
+
+mRNA_count002 <- nrow(gff_data002[grep("mRNA", gff_data002$attribute), ])
+
+counts002 <- c(tRNA_count002, rRNA_count002, hypothetical_count002, mRNA_count002)
+names(counts002) <- c("tRNAs", "rRNAs", "Hypothetic protein", "mRNA")
+
+counts002_df <- data.frame(
+  Category = names(counts002),
+  Count = counts002
+)
+
+plot_counts002 <- ggplot(data = counts002_df, aes(x = Category, y = Count, fill = Category)) +
+  geom_bar(stat = "identity", color = "black", width = 0.7) +
+  geom_text(aes(label = Count), vjust = -0.5, size = 3.5) +  
+  scale_fill_manual(values = c("skyblue", "slateblue", "lightgreen", "lightyellow")) +
+  labs(title = "tRNAs, rRNAs, and GENES ENCODING PROTEINS",
+       x = "Category",
+       y = "Number of RNAs") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    legend.position = "none"  
+  )
+
+print(plot_counts002) 
+
+ggsave("counts002_plot.png", plot = plot_counts002, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
+
+<details>
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Code 6. Code 6. R code to compare the coding and non-coding genes of** ***Bifidobacterium longum***
+
+</summary>
+
+```{r eval=FALSE}
+gff_data005 <- read.table("KBase_derived_ARG_B10_bin_005_annotated.gff", sep = "\t", header = FALSE, quote = "")
+
+colnames(gff_data005) <- c("seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute")
+
+tRNA_count005 <- nrow(gff_data005[grep("tRNA", gff_data005$attribute), ])
+
+rRNA_count005 <- nrow(gff_data005[grep("rRNA", gff_data005$attribute), ])
+
+hypothetical_count005 <- nrow(gff_data005[grep("hypothetical protein", gff_data005$attribute), ])
+
+mRNA_count005 <- nrow(gff_data005[grep("mRNA", gff_data005$attribute), ])
+
+
+counts005 <- c(tRNA_count005, rRNA_count005, hypothetical_count005, mRNA_count005)
+names(counts005) <- c("tRNAs", "rRNAs", "Hypothetic protein", "mRNA")
+
+counts005_df <- data.frame(
+  Category = names(counts005),
+  Count = counts005
+)
+
+plot_counts005 <- ggplot(data = counts005_df, aes(x = Category, y = Count, fill = Category)) +
+  geom_bar(stat = "identity", color = "black", width = 0.7) +
+  geom_text(aes(label = Count), vjust = -0.5, size = 3.5) +  
+  scale_fill_manual(values = c("skyblue", "slateblue", "lightgreen", "lightyellow")) +
+  labs(title = "tRNAs, rRNAs, and GENES ENCODING PROTEINS",
+       x = "Category",
+       y = "Number of RNAs") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(size = 10, angle = 45, hjust = 1),
+    plot.title = element_text(size = 14, face = "bold", hjust = 0.5),
+    legend.position = "none"  
+  )
+
+print(plot_counts005)
+
+ggsave("counts005_plot.png", plot = plot_counts005, width = 7, height = 5, dpi = 300, bg = "white")
+```
+
+</details>
+
 ### Practical 8: Phylogenetics
 
-In order to achieve the final part of the project, the Conda software, an environment and package manager, was used. It allows management of the working environments, libraries and tools needed for the project. Through this system, a new working folder that would later contain a number of files was created. The final result of the analysis of all these files was the construction of a phylogenetic tree. 
+In order to achieve the final part of the project, the Conda software, an environment and package manager, was used. It allows management of the working environments, libraries and tools needed for the project. Through this system, a new working folder that would later contain a number of files was created. The final result of the analysis of all these files was the construction of a phylogenetic tree.
 
-To proceed, the protein sequences of the target bacteria were copied into a text editor and saved in the new folder. Then, an homologous search for the protein was then conducted using the NCBI BLAST website. This tool designed to compare a query sequence with a database of known sequences, was employed to identify regions of similarity. Specifically, blastp was used to compare the input protein against protein databases. The RefSeq Select proteins database was chosen for this analysis, as it contains high-quality protein sequences and includes the most representative sequences from a wide range of organisms. The dump of sequences and the target one were stored in a file. In particular, the sequence coding for the organic hydroperoxide resistance transcriptional regulator protein (**EMBDAHDF_01639**) of *Veillonella atypica seminalis* was used to construct the phylogenetic tree. Regarding *Bifidobacterium longum* (**GBIFMCFE_00735**), the gene coding for signal peptidase I was the one applied to build the cladogram. 
+To proceed, the protein sequences of the target bacteria were copied into a text editor and saved in the new folder. Then, an homologous search for the protein was then conducted using the NCBI BLAST website. This tool designed to compare a query sequence with a database of known sequences, was employed to identify regions of similarity. Specifically, blastp was used to compare the input protein against protein databases. The RefSeq Select proteins database was chosen for this analysis, as it contains high-quality protein sequences and includes the most representative sequences from a wide range of organisms. The dump of sequences and the target one were stored in a file. In particular, the sequence coding for the organic hydroperoxide resistance transcriptional regulator protein (**EMBDAHDF_01639**) of *Veillonella atypica seminalis* was used to construct the phylogenetic tree. Regarding *Bifidobacterium longum* (**GBIFMCFE_00735**), the gene coding for signal peptidase I was the one applied to build the cladogram.
 
 Then, the alignment and the trimming were done and the quality of the sequences was improved. Finally, the construction of a phylogenetic tree containing the 21 sequences was performed in order to be able to compare the differences between species and infer the possible phylogenetic relationships.
-</div>
+:::
 
 # Results
-<div style="font-size: 12px; text-align: justify;">
+
+::: {style="font-size: 12px; text-align: justify;"}
 This project was conducted using the ARG_B10 sample, which is a data set result of sequencing a sample of the subject using the Illumina NovaSeq platform. The results aimed to analyse the gut microbiome profile to understand the microbial compositions of the patient, and the relation with health outcomes in early childhood.
 
 ### Practical 5.
-The protocol started with an unprocessed patient sample. Thus, as explained in the methodology section, different K-base tools were used to obtain two high-quality metagenome-assembled genomes (MAGs). 
 
-Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading [Figure 1]. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads' GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).
+The protocol started with an unprocessed patient sample. Thus, as explained in the methodology section, different K-base tools were used to obtain two high-quality metagenome-assembled genomes (MAGs).
+
+Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading \[Figure 1\]. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads' GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.</summary>
-  ![Figure 1](practice 5/figure1.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.
+
+</summary>
+
+![Figure 1](practice%205/figure1.png)
+
 </details>
 
-
-The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level,  enhancing it further was not possible [Figure 2].    
+The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level, enhancing it further was not possible \[Figure 2\].
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution. </summary>
-  ![Figure 2](practice 5/figure2.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.
+
+</summary>
+
+![Figure 2](practice%205/figure2.png)
+
 </details>
 
+The succeeding step in the protocol was MEGAHIT, resulting in an assembly containing a total of 1922 contigs, with 436 contigs being at least 10,000 bp long. The N50 value was 28.019 suggesting that the assembly is moderately contiguous, with many contigs of smaller size, and, as was previously observed the GC content is relatively high at 54.05%, indicating a good quality.
 
-The succeeding step in the protocol was MEGAHIT, resulting in an assembly containing a total of 1922 contigs, with 436 contigs being at least 10,000 bp long. The N50 value was 28.019 suggesting that the assembly is moderately contiguous, with many contigs of smaller size, and, as was previously observed the GC content is relatively high at 54.05%, indicating a good quality. 
-
-
-Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a >90% completeness and <5% contamination. Hence, the MAGs chosen for the project were bin.002 (**o_Selenomonadales**), with a 99.4% of completeness and 0% of contamination; and bin.005 (**f_Bifidobacteriaceae**) with 100% completeness and 2.42% contamination [Figure 3,4].
+Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a \>90% completeness and \<5% contamination. Hence, the MAGs chosen for the project were bin.002 (**o_Selenomonadales**), with a 99.4% of completeness and 0% of contamination; and bin.005 (**f_Bifidobacteriaceae**) with 100% completeness and 2.42% contamination \[Figure 3,4\].
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
- </summary>
-  ![Figure 3](practice 5/figure3.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
+
+</summary>
+
+![Figure 3](practice%205/figure3.png)
+
 </details>
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 4. Comparison of the distribution of GC content (% GC) of the two bins selected. X-axis represents the GC content percentage and y-axis shows the percentage of segments of 5000 base.** (A) GC content distribution of the bin_002 is around 40% GC, the distribution has a narrower spread, so there is less variation in the GC content in relation to the windows. (B) GC content distribution of the bin_005 is around 60%, the distribution is broader, so there is more variation in GC content among the windows.</summary>
-  ![Figure 4](practice 5/figure4.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 4. Comparison of the distribution of GC content (% GC) of the two bins selected. X-axis represents the GC content percentage and y-axis shows the percentage of segments of 5000 base.** (A) GC content distribution of the bin_002 is around 40% GC, the distribution has a narrower spread, so there is less variation in the GC content in relation to the windows. (B) GC content distribution of the bin_005 is around 60%, the distribution is broader, so there is more variation in GC content among the windows.
+
+</summary>
+
+![Figure 4](practice%205/figure4.png)
+
 </details>
 
 ### Practical 6.
 
-Once the MAGs were selected, the project proceeds with the identification of the species to which the MAGs correspond, using the Prokka K-base tool. Basically, the genome for the bin.002 contains 2033 predicted genes, with 1984 being protein-coding (1299 have known functions, and specifically 603 of these genes are linked to enzymatic activities), whereas the bin.005 contains 1997 predicted genes, with 1940 being protein-coding (1125 have known functions, and specifically 520 of these genes are linked to enzymatic activities). Hence, as soon as the genome assemblies were annotated, a Batch was executed to create a GenomeSet of the species without specifying the names. 
+Once the MAGs were selected, the project proceeds with the identification of the species to which the MAGs correspond, using the Prokka K-base tool. Basically, the genome for the bin.002 contains 2033 predicted genes, with 1984 being protein-coding (1299 have known functions, and specifically 603 of these genes are linked to enzymatic activities), whereas the bin.005 contains 1997 predicted genes, with 1940 being protein-coding (1125 have known functions, and specifically 520 of these genes are linked to enzymatic activities). Hence, as soon as the genome assemblies were annotated, a Batch was executed to create a GenomeSet of the species without specifying the names.
 
 The GTDB classifier was then used to taxonomically classify the MAGs and obtain the genome information. The data used for the taxonomic classification was the ARG_B10_bin002_annotated and ARG_B10_bin005_annotated, which were obtained using the Prokka. So, basically the outcome was the objective taxonomic assignments for the bacterias based on the GTDB. Furthermore, the classification obtained is observed in Figure 5 and 6.
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis.
- Taxonomic classification of the MAGs </summary>
-  ![Figure 5](practice 6/figure5.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs
+
+</summary>
+
+![Figure 5](practice%206/figure5.png)
+
 </details>
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 6. Taxonomic classification of** ***Bifidobacterium longum*** **and** ***Veillonella atypica seminalis***. (A) Taxonomic classification of *Veillonella atypica seminalis*, it can be seen that the bacteria belongs to the Bacillota phylum, part of the Negativicutes class, within the order of Veillonellales, and is in the Veillonellaceae family. (B) Taxonomic classification of *Bifidobacterium longum* is in the Actinomycetota phylum, part of the Actinomycetia class, belongs to the Actinomycetales order, is in the Bifidobacteriaceae family, and the genus is Bifidobacterium. </summary>
-  ![Figure 6](practice 6/figure6.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 6. Taxonomic classification of** ***Bifidobacterium longum*** **and** ***Veillonella atypica seminalis***. (A) Taxonomic classification of *Veillonella atypica seminalis*, it can be seen that the bacteria belongs to the Bacillota phylum, part of the Negativicutes class, within the order of Veillonellales, and is in the Veillonellaceae family. (B) Taxonomic classification of *Bifidobacterium longum* is in the Actinomycetota phylum, part of the Actinomycetia class, belongs to the Actinomycetales order, is in the Bifidobacteriaceae family, and the genus is Bifidobacterium.
+
+</summary>
+
+![Figure 6](practice%206/figure6.png)
+
 </details>
 
+After obtaining this information, the genomes of reference were searched in GTDB. Then, annotations obtained by Prokka were **GCA_reference_typestrain.002** and **GCA_reference_typestrain.005**. On the one hand, the first one contains 2129 predicted genes, with 2078 being protein-coding (1315 have known functions, and specifically 600 of these genes are linked to enzymatic activities). On the other hand, the second one contains 2032 predicted genes, with 1946 being protein-coding (1134 have known functions, and specifically 495 of these genes are linked to enzymatic activities).
 
-After obtaining this information, the genomes of reference were searched in GTDB. Then, annotations obtained by Prokka were **GCA_reference_typestrain.002** and **GCA_reference_typestrain.005**. On the one hand, the first one contains 2129 predicted genes, with 2078 being protein-coding (1315 have known functions, and specifically 600 of these genes are linked to enzymatic activities). On the other hand, the second one contains 2032 predicted genes, with 1946 being protein-coding (1134 have known functions, and specifically 495 of these genes are linked to enzymatic activities). 
-
-Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the *Veillonella atypica seminalis*, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding *Bifidobacterium longum*, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796 [Figure 7]. 
-
+Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the *Veillonella atypica seminalis*, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding *Bifidobacterium longum*, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796 \[Figure 7\].
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**</summary>
-  ![Figure 7](practice 6/figure7.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**
+
+</summary>
+
+![Figure 7](practice%206/figure7.png)
+
 </details>
 
 ### Practical 7.
@@ -174,64 +549,91 @@ As for *Veillonella atypica seminalis*, it can be observed that for most of the 
 
 Regarding *Bifidobacterium longum*, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome.
 
-Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*,  the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress** [@Meireles2022] [Figure 8A]. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure 8C. 
+Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*, the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress** [@Meireles2022] \[Figure 8A\]. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure 8C.
 
-With respect to *Bifidobacterium longum* the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division [@Nguyen2023]. After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome. For the amino acid sequence, there are also two changes comparing both strains [Figure 9]. Thus, the result probably indicates that this protein has an important role in the cell, since despite the changes found in two amino acids, the rest of the sequence is conserved. This is important, as the properties and functions of the protein will be preserved. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are mostly the same.  
+With respect to *Bifidobacterium longum* the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division [@Nguyen2023]. After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome. For the amino acid sequence, there are also two changes comparing both strains \[Figure 9\]. Thus, the result probably indicates that this protein has an important role in the cell, since despite the changes found in two amino acids, the rest of the sequence is conserved. This is important, as the properties and functions of the protein will be preserved. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are mostly the same.
 
-Finally, the functional diversity of the genes and RNAs of the *Veillonella atypica seminalis* and *Bifidobacterium longum*, could be observed in Figure 10. Concretely, a clear tendency is evident in both figures, the majority of the genes correspond to mRNA, which encode for proteins. Within this group,  a smaller subset encodes hypothetical proteins. In contrast, the number of tRNA, and especially rRNAs, is significantly lower. These results indicate a predominance of genes involved in protein coding over those associated with the structural and functional roles of RNAs.
+Finally, the functional diversity of the genes and RNAs of the *Veillonella atypica seminalis* and *Bifidobacterium longum*, could be observed in Figure 10. Concretely, a clear tendency is evident in both figures, the majority of the genes correspond to mRNA, which encode for proteins. Within this group, a smaller subset encodes hypothetical proteins. In contrast, the number of tRNA, and especially rRNAs, is significantly lower. These results indicate a predominance of genes involved in protein coding over those associated with the structural and functional roles of RNAs.
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category,  *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.</summary>
-  ![Figure 8](practice 7/figure8.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.
+
+</summary>
+
+![Figure 8](practice%207/figure8.png)
+
 </details>
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some  changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.</summary>
-  ![Figure 9](practice 7/figure9.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.
+
+</summary>
+
+![Figure 9](practice%207/figure9.png)
+
 </details>
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of  RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.</summary>
-  ![Figure 10](practice 7/figure10.png)
-</details>
 
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.
+
+</summary>
+
+![Figure 10](practice%207/figure10.png)
+
+</details>
 
 ### Practical 8.
 
-In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed [Figure 11]. 
+In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed \[Figure 11\].
 
-In the case of *Veillonella atypica seminalis*, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress [Figure 11A]. 
+In the case of *Veillonella atypica seminalis*, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress \[Figure 11A\].
 
-In the case of *Bifidobacterium longum*, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the ***Bifidobacterium reuteri***, ***Bifidobacterium colobi***, ***Bifidobacterium imperatoris***, ***Bifidobacterium saguini***, ***Bifidobacterium felcineum*** and ***Bifidobacterium cebidarum*** are the ones most evolutively related to the analysed species [Figure 11B].
+In the case of *Bifidobacterium longum*, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the ***Bifidobacterium reuteri***, ***Bifidobacterium colobi***, ***Bifidobacterium imperatoris***, ***Bifidobacterium saguini***, ***Bifidobacterium felcineum*** and ***Bifidobacterium cebidarum*** are the ones most evolutively related to the analysed species \[Figure 11B\].
 
 <details>
-  <summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.</summary>
-  ![Figure 11](practice 8/figure11.png)
+
+<summary style="margin-bottom: 10px;">
+
+<span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.
+
+</summary>
+
+![Figure 11](practice%208/figure11.png)
+
 </details>
 
 ## Discussion
 
 The gut microbiota has been recently considered to be an environmental factor that could contribute to disease development. Therefore, this study provides a comprehensive characterization and analysis of bacterial strains, offering a holistic approach to help determine the genetic composition, functional potential and evolutionary relationships of the bacteria in the sample.
- 
-Firstly, the quality control performed revealed that the first 15 nucleotides of the raw reads exhibited fluctuations, which was indicative of suboptimal sequencing quality in that region. Therefore, by trimming the first 15 nucleotides, the nucleotide distribution was improved, obtaining just the higher-quality reads. Regarding the GC content, although initially it was high, after trimming it persisted optimal, reinforcing the reliability of the data. Furthermore, the sequence quality modifications were necessary to achieve high-quality assemblies with MEGAHIT, resulting in 1922 contigs. Nonetheless, the 28,019 N50 value supplied further support to the quality of the assembly, suggesting that the genome data was sufficiently continuous for downstream analysis.
- 
-MaxBin and CheckM tools were then used for binning and assessing the completeness and contamination of the assembled genomes. As for the binning process, it was achieved with an outstanding accomplishment rate of 96.1%, indicating that most of the sequences were grouped into the nine different metagenomic bins. Moreover, two of these nine metagenomics reads were selected for the study, concretely bin.002 from the Selenomonadales order and bin.005 corresponding to Bifidobacteriaceae family. The selection of the bins was made according to high completeness and low contamination 99,4% and 0% for the first bin and 100% and 2.42% for the other one. 
- 
-Regarding the taxonomic classification, using the GTDB it was confirmed that bin.002 corresponds to *Veillonella atypica seminalis* and bin.005 to *Bifidobacterium longum*, which corresponds with previously reported results. Afterall, the taxonomic results obtained with the FastANI revealed a close genetic relationship between the MAGs and their reference genomes, specifically 99.2% for *Veillonella atypica seminalis* and 98.9% for *Bifidobacterium longum*. 
- 
-The functional analysis displayed interesting insights into the metabolic pathways and genetic composition of both bacterial strains. For *Veillonella atypica seminalis* most of the functional categories aligned with the reference genome, although some differences were observed in some of the categories. Notably, the number of genes encoded in the carbohydrates functional category was superior in the target strain compared to the reference. This result could indicate that the presence of adaptations in our strain were caused by microbiome or host interactions. Similarly, *Bifidobacterium longum* showed in the majority of functional categories the same number of genes as the reference organism, nonetheless in certain categories some different number coding genes were found. In the end, these results emphasise the genomic variation within the species and may also indicate strain-specific adaptations.  
 
-Going further with the analysis, the genetic variability was explored by performing a pairwise sequence alignments of selected genes. Specifically, for the *Veillonella atypica seminalis* the encoding gene selected was an organic hydroperoxide resistance transcriptional regulator, which revealed nucleotide and amino acid changes between the MAG and reference genome. So again, it is reflected that a natural selection process may have occurred to the target strain, enabling the strain to adapt to oxidative stress conditions. Likewise, the signal peptidase I protein of *Bifidobacterium longum* also displayed nucleotide and amino acid variations, indicating that the strain has undergone selection pressures that have allowed it to enhance its defense systems and adapt to harsh environments.
-Finally, by carrying out a phylogenetic analysis, it has been possible to reaffirm the results obtained previously. Furthermore, this analysis has enables to obtain an additional context of the evolutionary history of the selected genes. In *Veillonella atypica seminalis*, the protein studied has been grouped within a clade that contains other proteins from the same family of organisms belonging to the Veillonellaceae family. This allows us to corroborate that there is a high conservation, due to the crucial role of this protein in resistance to oxidative stress. Similarly, in *Bifidobacterium longum* it has been observed that the protein studied is related to homologous genes of species such as *Bifidobacterium reuteri***, ***Bifidobacterium colobi*, highlighting the importance of evolutionary pressures on genomic adaptations.
+Firstly, the quality control performed revealed that the first 15 nucleotides of the raw reads exhibited fluctuations, which was indicative of suboptimal sequencing quality in that region. Therefore, by trimming the first 15 nucleotides, the nucleotide distribution was improved, obtaining just the higher-quality reads. Regarding the GC content, although initially it was high, after trimming it persisted optimal, reinforcing the reliability of the data. Furthermore, the sequence quality modifications were necessary to achieve high-quality assemblies with MEGAHIT, resulting in 1922 contigs. Nonetheless, the 28,019 N50 value supplied further support to the quality of the assembly, suggesting that the genome data was sufficiently continuous for downstream analysis.
+
+MaxBin and CheckM tools were then used for binning and assessing the completeness and contamination of the assembled genomes. As for the binning process, it was achieved with an outstanding accomplishment rate of 96.1%, indicating that most of the sequences were grouped into the nine different metagenomic bins. Moreover, two of these nine metagenomics reads were selected for the study, concretely bin.002 from the Selenomonadales order and bin.005 corresponding to Bifidobacteriaceae family. The selection of the bins was made according to high completeness and low contamination 99,4% and 0% for the first bin and 100% and 2.42% for the other one.
+
+Regarding the taxonomic classification, using the GTDB it was confirmed that bin.002 corresponds to *Veillonella atypica seminalis* and bin.005 to *Bifidobacterium longum*, which corresponds with previously reported results. Afterall, the taxonomic results obtained with the FastANI revealed a close genetic relationship between the MAGs and their reference genomes, specifically 99.2% for *Veillonella atypica seminalis* and 98.9% for *Bifidobacterium longum*.
+
+The functional analysis displayed interesting insights into the metabolic pathways and genetic composition of both bacterial strains. For *Veillonella atypica seminalis* most of the functional categories aligned with the reference genome, although some differences were observed in some of the categories. Notably, the number of genes encoded in the carbohydrates functional category was superior in the target strain compared to the reference. This result could indicate that the presence of adaptations in our strain were caused by microbiome or host interactions. Similarly, *Bifidobacterium longum* showed in the majority of functional categories the same number of genes as the reference organism, nonetheless in certain categories some different number coding genes were found. In the end, these results emphasise the genomic variation within the species and may also indicate strain-specific adaptations.
+
+Going further with the analysis, the genetic variability was explored by performing a pairwise sequence alignments of selected genes. Specifically, for the *Veillonella atypica seminalis* the encoding gene selected was an organic hydroperoxide resistance transcriptional regulator, which revealed nucleotide and amino acid changes between the MAG and reference genome. So again, it is reflected that a natural selection process may have occurred to the target strain, enabling the strain to adapt to oxidative stress conditions. Likewise, the signal peptidase I protein of *Bifidobacterium longum* also displayed nucleotide and amino acid variations, indicating that the strain has undergone selection pressures that have allowed it to enhance its defense systems and adapt to harsh environments. Finally, by carrying out a phylogenetic analysis, it has been possible to reaffirm the results obtained previously. Furthermore, this analysis has enables to obtain an additional context of the evolutionary history of the selected genes. In *Veillonella atypica seminalis*, the protein studied has been grouped within a clade that contains other proteins from the same family of organisms belonging to the Veillonellaceae family. This allows us to corroborate that there is a high conservation, due to the crucial role of this protein in resistance to oxidative stress. Similarly, in *Bifidobacterium longum* it has been observed that the protein studied is related to homologous genes of species such as *Bifidobacterium reuteri***,** *Bifidobacterium colobi*, highlighting the importance of evolutionary pressures on genomic adaptations.
 
 All things considered, our investigation has provided significant information on the functional potential and genetic diversity of the target microorganisms. As mentioned above, the impact of evolutionary pressures on the differences in gene content between MAGs and reference genomes has been reflected. In addition, the results have shown the effect of phenomena such as genetic plasticity and functional adaptability in bacteria. Finally, it should be noted that further research focusing on interactions between strains and environmental influences may provide a clearer understanding of the role of bacteria in health and disease, as well as possible therapeutic applications.
-</div>
+:::
 
 # Conclusions
-<div style="font-size: 12px; text-align: justify;">
-In conclusion, this project allowed a detailed characterization of the bacterial strains present in the gut microbiome sample, revealing both their genetic composition and functional potential, as well as the evolutionary relationships between them. On the one hand, quality and assembly analyses confirmed the reliability of the data. On the other hand, binning tools allowed an accurate taxonomic classification. Altogether, the results confirmed that two of the species found in the sample were *Veillonella atypica seminalis* and *Bifidobacterium longum*. 
+
+::: {style="font-size: 12px; text-align: justify;"}
+In conclusion, this project allowed a detailed characterization of the bacterial strains present in the gut microbiome sample, revealing both their genetic composition and functional potential, as well as the evolutionary relationships between them. On the one hand, quality and assembly analyses confirmed the reliability of the data. On the other hand, binning tools allowed an accurate taxonomic classification. Altogether, the results confirmed that two of the species found in the sample were *Veillonella atypica seminalis* and *Bifidobacterium longum*.
 
 Besides, there were also genomic variations and specific adaptations in both strains with respect to the reference sequences. From the results obtained, it can be infered that it is due to evolutionary pressures. Nevertheless, further research should be done in order to provide a deeper understanding in this field and maybe generate potential therapeutic applications in the near future.
-</div>
+:::
 
 # Bibliography
