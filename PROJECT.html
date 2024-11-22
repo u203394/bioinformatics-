@@ -7,7 +7,7 @@
 
     
     
-    <title>.</title>
+    <title>PROJECT.knit</title>
     <!-- Material Design fonts -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -31,7 +31,7 @@
         <style type="text/css">code{white-space: pre;}</style>
     <style type="text/css">
       pre > code.sourceCode { white-space: pre; position: relative; }
-      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span { line-height: 1.25; }
       pre > code.sourceCode > span:empty { height: 1.2em; }
       .sourceCode { overflow: visible; }
       code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
       }
       @media print {
       pre > code.sourceCode { white-space: pre-wrap; }
-      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
       }
       pre.numberSource code
         { counter-reset: source-line 0; }
@@ -189,9 +189,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-3">
-	  	  <div id="header">
-	    <h1 class="title">.</h1>
-	    	    	    	  </div>
 	  	</div>
       </div>
     </div>
@@ -203,11 +200,11 @@
 <nav class="col-xs-3 menu">
 <div id="toc">
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#methods">Methods</a></li>
-<li><a href="#results">Results</a></li>
-<li><a href="#conclusions">Conclusions</a></li>
-<li><a href="#bibliography">Bibliography</a></li>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#methods" id="toc-methods">Methods</a></li>
+<li><a href="#results" id="toc-results">Results</a></li>
+<li><a href="#conclusions" id="toc-conclusions">Conclusions</a></li>
+<li><a href="#bibliography" id="toc-bibliography">Bibliography</a></li>
 </ul>
 </div>
 </nav>
@@ -220,33 +217,97 @@
 
 <div class="col-xs-10">
 <h1 style="font-size: 2.1em; color: white;">
-Metagenomic analysis of gut microbial strains
+<p>Metagenomic analysis of gut microbial strains</p>
 </h1>
-<p><span style="font-size: 0.8em; color: white !important;">Rita Oliva, Clara Planas, and Nicole Ramos</p>
+<p><span style="font-size: 0.8em; color: white !important;">Rita Oliva,
+Clara Planas, and Nicole Ramos</p>
 <p></span></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <div style="font-size: 12px; text-align: justify;">
-<p>The human microbiota is composed mainly of bacteria but also includes viruses, archaea, molds, yeasts and protozoa. The microorganisms that colonise the human body are located on the skin, in the respiratory, digestive and genitourinary systems, as well as in the secretory glands, such as the mammary, biliary, and sebaceous glands.<span class="citation"><sup>[<a href="#ref-Requena2021" role="doc-biblioref">1</a>]</sup></span> The gut microbiome is complex and dynamic, with implications for both health and disease. During infancy and due to different factors, such as diet or other external factors, the microbial population develops. Moreover, it is at this stage that a direct relationship has been observed between the acquisition of a varied and stable microbiome and the development of an optimal immune system and resistance to pathogenic infections. Nevertheless, the understanding of the specific bacterial species and their contributions remains incomplete.</p>
-<p>In this study, it is performed a reconstruction and a characterisation of metagenome-assembled genomes (MAGs) from a stool sample (<strong>ARG_B10</strong>) to analyse the gut microbiome of a healthy 1-year-old male, born vaginally in Argentina. In order to identify microbial species and their physiological functions, shotgun metagenomics and bioinformatic tools are used for genome assembly and identification. Nine high-quality MAGs have been identified; however, following strict criteria such as genome completeness (&gt;90%) and contamination (&lt;5%), only <strong><em>Veillonella atypica seminalis</em></strong>, named as <strong>bin.002</strong>, and <strong><em>Bifidobacterium longum</em></strong>, named as <strong>bin.005</strong>, were chosen.</p>
-<p>On the one hand, <em>Veillonella atypica seminalis</em> is a Gram-negative anaerobe bacteria which is part of the oral, gastrointestinal and vaginal microbiota. It transforms lactic acid into short-chain fatty acids, which play an important role in intestinal health.<span class="citation"><sup>[<a href="#ref-Mashima2013" role="doc-biblioref">2</a>]</sup></span> On the other hand, <em>Bifidobacterium longum</em> is a Gram-positive anaerobe bacteria that is also found in the intestinal tract, and, as it is involved in the metabolism of complex carbohydrates such as human milk oligosaccharides, it is among the earliest microbes to colonise the gut and it is the most prevalent in both adult and newborn intestines.<span class="citation"><sup>[<a href="#ref-Yao2021" role="doc-biblioref">3</a>]</sup></span> In addition, <em>Bifidobacterium longum</em> is recognised for providing probiotic benefits, including enhancing immune response and protection against pathogens.</p>
-<p>As a result of the presence of these two species in the fecal sample, this study aims to identify the functional roles and contributions to health by characterising them. Additionally, comparative analyses of the genomes obtained with the genomes of reference of each species have been carried out to explore evolutionary changes and differences in functional potential.</p>
+<p>The human microbiota is composed mainly of bacteria but also includes
+viruses, archaea, molds, yeasts and protozoa. The microorganisms that
+colonise the human body are located on the skin, in the respiratory,
+digestive and genitourinary systems, as well as in the secretory glands,
+such as the mammary, biliary, and sebaceous glands<span
+class="citation"><sup>[<a href="#ref-Requena2021">1</a>]</sup></span>.
+The gut microbiome is complex and dynamic, with implications for both
+health and disease. During infancy and due to different factors, such as
+diet or other external factors, the microbial population develops.
+Moreover, it is at this stage that a direct relationship has been
+observed between the acquisition of a varied and stable microbiome and
+the development of an optimal immune system and resistance to pathogenic
+infections. Nevertheless, the understanding of the specific bacterial
+species and their contributions remains incomplete.</p>
+<p>In this study, it is performed a reconstruction and a
+characterisation of metagenome-assembled genomes (MAGs) from a stool
+sample (<strong>ARG_B10</strong>) to analyse the gut microbiome of a
+healthy 1-year-old male, born vaginally in Argentina. In order to
+identify microbial species and their physiological functions, shotgun
+metagenomics and bioinformatic tools are used for genome assembly and
+identification. Nine high-quality MAGs have been identified; however,
+following strict criteria such as genome completeness (&gt;90%) and
+contamination (&lt;5%), only <strong><em>Veillonella atypica
+seminalis</em></strong>, named as <strong>bin.002</strong>, and
+<strong><em>Bifidobacterium longum</em></strong>, named as
+<strong>bin.005</strong>, were chosen.</p>
+<p>On the one hand, <em>Veillonella atypica seminalis</em> is a
+Gram-negative anaerobe bacteria which is part of the oral,
+gastrointestinal and vaginal microbiota. It transforms lactic acid into
+short-chain fatty acids, which play an important role in intestinal
+health<span class="citation"><sup>[<a
+href="#ref-Mashima2013">2</a>]</sup></span>. On the other hand,
+<em>Bifidobacterium longum</em> is a Gram-positive anaerobe bacteria
+that is also found in the intestinal tract, and, as it is involved in
+the metabolism of complex carbohydrates such as human milk
+oligosaccharides, it is among the earliest microbes to colonise the gut
+and it is the most prevalent in both adult and newborn intestines<span
+class="citation"><sup>[<a href="#ref-Yao2021">3</a>]</sup></span>. In
+addition, <em>Bifidobacterium longum</em> is recognised for providing
+probiotic benefits, including enhancing immune response and protection
+against pathogens.</p>
+<p>As a result of the presence of these two species in the fecal sample,
+this study aims to identify the functional roles and contributions to
+health by characterising them. Additionally, comparative analyses of the
+genomes obtained with the genomes of reference of each species have been
+carried out to explore evolutionary changes and differences in
+functional potential.</p>
 </div>
 </div>
 <div id="methods" class="section level1">
 <h1>Methods</h1>
 <div style="font-size: 12px; text-align: justify;">
-<p>The methods used to achieve the objectives of the project are described below. It was divided into four parts. In the first part, sequencing data that contained multiple sequences from different organisms were obtained, and genomes were reconstructed to later be separated into different species or organisms. In the second part, a taxonomic identification of the bacterial genomes in the sample was done. In order to achieve this, the MAGs from the sample were compared to reference ones using a database. The main objectives of this part were:</p>
+<p>The methods used to achieve the objectives of the project are
+described below. It was divided into four parts. In the first part,
+sequencing data that contained multiple sequences from different
+organisms were obtained, and genomes were reconstructed to later be
+separated into different species or organisms. In the second part, a
+taxonomic identification of the bacterial genomes in the sample was
+done. In order to achieve this, the MAGs from the sample were compared
+to reference ones using a database. The main objectives of this part
+were:</p>
 <ul>
 <li>To find the species to which the MAG belongs</li>
 <li>To obtain the genome from the type strain of the MAG</li>
 <li>To compute the nucleotide identity between the two</li>
 </ul>
-<p>In the third part, the functional categories of the genes from the sample genomes and their respective type strain were compared. Rstudio was fundamental in this process.</p>
-<p>In the last part, a specific gene present in <em>Veillonella atypica seminalis</em> (<strong>bin.002</strong>) and <em>Bifidobacterium longum</em> (<strong>bin.005</strong>) that was not the same as the type strain, was selected. From that, a phylogenetic tree was reconstructed and it brought together 20 different species from the same family, plus the proteins of interest (from 002 and 005). This allowed to compare the differences between species and their phylogenetic organisation.</p>
-<div id="practical-5-assembly-of-a-bacterial-genome" class="section level3">
+<p>In the third part, the functional categories of the genes from the
+sample genomes and their respective type strain were compared. Rstudio
+was fundamental in this process.</p>
+<p>In the last part, a specific gene present in <em>Veillonella atypica
+seminalis</em> (<strong>bin.002</strong>) and <em>Bifidobacterium
+longum</em> (<strong>bin.005</strong>) that was not the same as the type
+strain, was selected. From that, a phylogenetic tree was reconstructed
+and it brought together 20 different species from the same family, plus
+the proteins of interest (from 002 and 005). This allowed to compare the
+differences between species and their phylogenetic organisation.</p>
+<div id="practical-5-assembly-of-a-bacterial-genome"
+class="section level3">
 <h3>Practical 5: Assembly of a bacterial genome</h3>
-<p>In the first part of the project, different steps were performed to finally obtain an assembled genome. From this, the different organisms present in the sample could be identified. The different steps and the tools used for each were:</p>
+<p>In the first part of the project, different steps were performed to
+finally obtain an assembled genome. From this, the different organisms
+present in the sample could be identified. The different steps and the
+tools used for each were:</p>
 <ul>
 <li>Sequencing read QC (FastQC)</li>
 <li>Trimming (Trimmomatic)</li>
@@ -255,455 +316,960 @@ Metagenomic analysis of gut microbial strains
 <li>Binning (MaxBin)</li>
 <li>MAG QC (CheckM)</li>
 </ul>
-<p>Once the sequencing results in FASTQ output files that contain the sequencing reads of interest were obtained, a quality control was performed to evaluate the state of our data to make sure that the results obtained were reliable and accurate.</p>
-<p>Firstly, the sequence was examined to identify which parts could be improved. To enhance the quality of the sample it was used Trimmomatic, which helped remove the low quality parts of the read by trimming the sequencing data. In particular, different numbers of nucleotides were trimmed until it was found that 15 nucleotides was the optimal number to make the quality of our sequences optimal. Then, the quality control step was done again to verify if there had been an improvement in the sequencing data.</p>
-<p>Secondly, an assembly was performed, reconstructing the genome from the raw sequencing reads. Before carrying out the complete genome reconstruction, the fragments were combined to make longer regions of DNA. These larger regions are named contigs, they do not cover the entire genome and may also contain gaps, in consequence the read quality is not optimal. To perform the assembly it was used the MEGAHIT tool, since it is a single node assembler used for large and complex metagenomic reads, ideal for the sample.</p>
-<p>Once the contigs were generated, metagenomic binning was performed in order to identify and group the different contigs. This process generates “bins” which correspond to different species that were present in the sample. This is possible because the different contigs from the same species present similarities in the nucleotide composition. This binning process allowed to organise the scattered contigs that probably came from multiple species and reconstruct genomes that belonged to each organism individually.</p>
-<p>When the contigs were grouped in different bins, the Metagenome-Assembled Genome (MAG) was performed, which is used when a partial or complete genome has been reconstructed and there is a need to identify which organisms are present. To complete this step, the quality of the MAG was assessed by defining the completeness, checking if there are the genes that were expected, and estimating which of the genes were actually found. In addition, contamination was detected by identifying if DNA from other microorganisms was present in the assembled genome and if the number of single copy genes in the genome was present more than once.</p>
-<p>Depending on the percentage of completeness and contamination it was possible to determine whether it was a high-quality MAG or a medium-quality one. If it was more than 90% of completeness and less than 5% of contamination it would be a high-quality MAG. If, on the other hand, it was more than 50% of completeness and less than 5% of contamination it would be a medium-quality MAG. From the MAGs obtained two were chosen, bin.002 and bin.005, since they had a high percentage of completeness (over 95%), therefore, they were two high-quality MAGs.</p>
-<p>To carry out all these steps KBase, a platform that enables data uploading for further manipulation and analysis by using workflows, was used. Different narratives were created for the different approaches done.</p>
+<p>Once the sequencing results in FASTQ output files that contain the
+sequencing reads of interest were obtained, a quality control was
+performed to evaluate the state of our data to make sure that the
+results obtained were reliable and accurate.</p>
+<p>Firstly, the sequence was examined to identify which parts could be
+improved. To enhance the quality of the sample it was used Trimmomatic,
+which helped remove the low quality parts of the read by trimming the
+sequencing data. In particular, different numbers of nucleotides were
+trimmed until it was found that 15 nucleotides was the optimal number to
+make the quality of our sequences optimal. Then, the quality control
+step was done again to verify if there had been an improvement in the
+sequencing data.</p>
+<p>Secondly, an assembly was performed, reconstructing the genome from
+the raw sequencing reads. Before carrying out the complete genome
+reconstruction, the fragments were combined to make longer regions of
+DNA. These larger regions are named contigs, they do not cover the
+entire genome and may also contain gaps, in consequence the read quality
+is not optimal. To perform the assembly it was used the MEGAHIT tool,
+since it is a single node assembler used for large and complex
+metagenomic reads, ideal for the sample.</p>
+<p>Once the contigs were generated, metagenomic binning was performed in
+order to identify and group the different contigs. This process
+generates “bins” which correspond to different species that were present
+in the sample. This is possible because the different contigs from the
+same species present similarities in the nucleotide composition. This
+binning process allowed to organise the scattered contigs that probably
+came from multiple species and reconstruct genomes that belonged to each
+organism individually.</p>
+<p>When the contigs were grouped in different bins, the
+Metagenome-Assembled Genome (MAG) was performed, which is used when a
+partial or complete genome has been reconstructed and there is a need to
+identify which organisms are present. To complete this step, the quality
+of the MAG was assessed by defining the completeness, checking if there
+are the genes that were expected, and estimating which of the genes were
+actually found. In addition, contamination was detected by identifying
+if DNA from other microorganisms was present in the assembled genome and
+if the number of single copy genes in the genome was present more than
+once.</p>
+<p>Depending on the percentage of completeness and contamination it was
+possible to determine whether it was a high-quality MAG or a
+medium-quality one. If it was more than 90% of completeness and less
+than 5% of contamination it would be a high-quality MAG. If, on the
+other hand, it was more than 50% of completeness and less than 5% of
+contamination it would be a medium-quality MAG. From the MAGs obtained
+two were chosen, bin.002 and bin.005, since they had a high percentage
+of completeness (over 95%), therefore, they were two high-quality
+MAGs.</p>
+<p>To carry out all these steps KBase, a platform that enables data
+uploading for further manipulation and analysis by using workflows, was
+used. Different narratives were created for the different approaches
+done.</p>
 </div>
-<div id="practical-6-database-search-and-taxonomic-identification-of-a-bacterial-genome" class="section level3">
-<h3>Practical 6: Database search and taxonomic identification of a bacterial genome</h3>
-<p>In this part of the project the two MAGs obtained bin.002 and bin.005, were identified and classified by taxonomy, which characterises the organism by description, identification, nomenclature and classification. In order to do this, the MAGs were compared to a reference genome obtained through the genome taxonomy database (GTDB).</p>
-<p>For this part a new Narrative was created, then the MAGs were added into it and using Prokka the genome was annotated. Prokka is used for annotating a sequenced genome identifying the functional regions of the DNA and assigning them a biological function. After this procedure, two annotated genomes were obtained: <strong>ARG_B10_bin002_annotated</strong> and <strong>ARG_B10_bin005_annotated</strong>.</p>
-<p>Then, a genome set using the Batch command was created in order to group the genomes and organise them to facilitate further analysis. This is useful to compare multiple genomes within the same study. Afterwards the GTDB classifier was used to find to which species our MAGs belonged and to classify them taxonomically. For this, it was essential to find the type strain of our species by consulting the genome taxonomy database and downloading it as a FASTA sequence. Subsequently, that FASTA sequence was imported into KBase and then a Fast Average Nucleotide Identify (FastANI) between our MAG and the downloaded type strain genome was performed, which corresponds to the reference genome.</p>
-<p>FastANI is used for bacterial species definition. This tool gave an estimation using an alignment-free approximate sequence mapping. It is usually used to compare the similarities between two different genomes based on the DNA sequences that are present in both organisms by studying nucleotide composition. In addition, it verifies the taxonomic identity. If the ANI between the genome from the sample and the reference one is higher than 95%, they probably correspond to the same species. If, on the contrary, the ANI is lower than 95%, the genomes do not correspond to the same species.</p>
+<div
+id="practical-6-database-search-and-taxonomic-identification-of-a-bacterial-genome"
+class="section level3">
+<h3>Practical 6: Database search and taxonomic identification of a
+bacterial genome</h3>
+<p>In this part of the project the two MAGs obtained bin.002 and
+bin.005, were identified and classified by taxonomy, which characterises
+the organism by description, identification, nomenclature and
+classification. In order to do this, the MAGs were compared to a
+reference genome obtained through the genome taxonomy database
+(GTDB).</p>
+<p>For this part a new Narrative was created, then the MAGs were added
+into it and using Prokka the genome was annotated. Prokka is used for
+annotating a sequenced genome identifying the functional regions of the
+DNA and assigning them a biological function. After this procedure, two
+annotated genomes were obtained:
+<strong>ARG_B10_bin002_annotated</strong> and
+<strong>ARG_B10_bin005_annotated</strong>.</p>
+<p>Then, a genome set using the Batch command was created in order to
+group the genomes and organise them to facilitate further analysis. This
+is useful to compare multiple genomes within the same study. Afterwards
+the GTDB classifier was used to find to which species our MAGs belonged
+and to classify them taxonomically. For this, it was essential to find
+the type strain of our species by consulting the genome taxonomy
+database and downloading it as a FASTA sequence. Subsequently, that
+FASTA sequence was imported into KBase and then a Fast Average
+Nucleotide Identify (FastANI) between our MAG and the downloaded type
+strain genome was performed, which corresponds to the reference
+genome.</p>
+<p>FastANI is used for bacterial species definition. This tool gave an
+estimation using an alignment-free approximate sequence mapping. It is
+usually used to compare the similarities between two different genomes
+based on the DNA sequences that are present in both organisms by
+studying nucleotide composition. In addition, it verifies the taxonomic
+identity. If the ANI between the genome from the sample and the
+reference one is higher than 95%, they probably correspond to the same
+species. If, on the contrary, the ANI is lower than 95%, the genomes do
+not correspond to the same species.</p>
 </div>
 <div id="practical-7-genome-annotation" class="section level3">
 <h3>Practical 7: Genome annotation</h3>
-<p>The main objective of this part of the project is to compare the biological functions between <em>Veillonella atypica seminalis</em> (<strong>ARG_B10_bin002_annotated</strong>) and <em>Bifidobacterium longum</em> (<strong>ARG_B10_bin005_annotated</strong>) and their respective type strains.</p>
-<p>This was done thanks to the Prokka tool. It was used again to annotate the reference genomes. This, as mentioned before, is useful to identify features of interest in a set of genome DNA sequences and label them with useful information. It is characterised by its effectiveness.</p>
-<p>The output of this process was the number of genes found in our genomes and in the respective type strains. The result was a table which showed the functional categories of the genes and the comparison of the differences between the ones encoded in the genome of our sample and the ones of the reference. In order to do this comparison, Rstudio was used to plot these differences.</p>
-<p>In Rstudio, <strong>table_002</strong> and <strong>table_005</strong> were created, allowing the read of functional categories of the genome and their respective values. This command generated data frames where the data was stored. To facilitate the analysis, the ggplot2 library was used in order to visualise the data and plot the graphics for further comparison between genomes. The reshape2 library was also employed. This helped to reorganise the data and facilitate analysis and visualisation. Lastly, the plots were runned and the differences of interest between genomes were compared.</p>
+<p>The main objective of this part of the project is to compare the
+biological functions between <em>Veillonella atypica seminalis</em>
+(<strong>ARG_B10_bin002_annotated</strong>) and <em>Bifidobacterium
+longum</em> (<strong>ARG_B10_bin005_annotated</strong>) and their
+respective type strains.</p>
+<p>This was done thanks to the Prokka tool. It was used again to
+annotate the reference genomes. This, as mentioned before, is useful to
+identify features of interest in a set of genome DNA sequences and label
+them with useful information. It is characterised by its
+effectiveness.</p>
+<p>The output of this process was the number of genes found in our
+genomes and in the respective type strains. The result was a table which
+showed the functional categories of the genes and the comparison of the
+differences between the ones encoded in the genome of our sample and the
+ones of the reference. In order to do this comparison, Rstudio was used
+to plot these differences.</p>
+<p>In Rstudio, <strong>table_002</strong> and <strong>table_005</strong>
+were created, allowing the read of functional categories of the genome
+and their respective values. This command generated data frames where
+the data was stored. To facilitate the analysis, the ggplot2 library was
+used in order to visualise the data and plot the graphics for further
+comparison between genomes. The reshape2 library was also employed. This
+helped to reorganise the data and facilitate analysis and visualisation.
+Lastly, the plots were runned and the differences of interest between
+genomes were compared.</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"><strong>Code 1. R code to compare the Veillonella atypica seminalis with the reference genome.</strong>
+<p><span style="font-size: 0.8em;"><strong>Code 1. R code to compare the
+Veillonella atypica seminalis with the reference genome.</strong></p>
 </summary>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Carbohydrates&quot;</span>,<span class="st">&quot;Respiration&quot;</span>, <span class="st">&quot;Nucleosides and nucleotides&quot;</span>, <span class="st">&quot;Stress response&quot;</span>,<span class="st">&quot;Protein Metabolism&quot;</span>, <span class="st">&quot;Regulation and Cell signalling&quot;</span>,<span class="st">&quot;Cell Wall and Capsule&quot;</span>,<span class="st">&quot;Miscellaneous&quot;</span>,<span class="st">&quot;Photosynthesis&quot;</span>,<span class="st">&quot;RNA Metabolism&quot;</span>,<span class="st">&quot;Metabolism of Aromatic Compounds&quot;</span>,<span class="st">&quot;Clustering-based subsystems&quot;</span>,<span class="st">&quot;Phosphorus Metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements&quot;</span>,<span class="st">&quot;Secondary Metabolism&quot;</span>,<span class="st">&quot;Dormancy and Sporulation&quot;</span>,<span class="st">&quot;Amino Acids and Derivatives&quot;</span>,<span class="st">&quot;Iron acquisition and metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements, Plasmids&quot;</span>,<span class="st">&quot;Cell Division and Cell Cycle&quot;</span>,<span class="st">&quot;Membrane Transport&quot;</span>,<span class="st">&quot;Nitrogen Metabolism&quot;</span>,<span class="st">&quot;Sulfur Metabolism&quot;</span>,<span class="st">&quot;DNA Metabolism&quot;</span>,<span class="st">&quot;Cofactors, Vitamins, Prosthetic Groups, Pigments&quot;</span>,<span class="st">&quot;Fatty Acids, Lipids, and Isoprenoids&quot;</span>,<span class="st">&quot;Virulence, Disease and Defense&quot;</span>,<span class="st">&quot;Potassium metabolism&quot;</span>,<span class="st">&quot;Motility and Chemotaxis&quot;</span>,<span class="st">&quot;Virulence&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>case_002 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">19</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">case_002 =</span> case_002,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>boxplot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Veillonella atypica seminalis&quot;</span>, <span class="st">&quot;Reference&quot;</span>),</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                          </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Category&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.6</span>)</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">2.1</span>)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot1) </span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot.png&quot;</span>, <span class="at">plot =</span> boxplot1, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Carbohydrates&quot;</span>,<span class="st">&quot;Respiration&quot;</span>, <span class="st">&quot;Nucleosides and nucleotides&quot;</span>, <span class="st">&quot;Stress response&quot;</span>,<span class="st">&quot;Protein Metabolism&quot;</span>, <span class="st">&quot;Regulation and Cell signalling&quot;</span>,<span class="st">&quot;Cell Wall and Capsule&quot;</span>,<span class="st">&quot;Miscellaneous&quot;</span>,<span class="st">&quot;Photosynthesis&quot;</span>,<span class="st">&quot;RNA Metabolism&quot;</span>,<span class="st">&quot;Metabolism of Aromatic Compounds&quot;</span>,<span class="st">&quot;Clustering-based subsystems&quot;</span>,<span class="st">&quot;Phosphorus Metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements&quot;</span>,<span class="st">&quot;Secondary Metabolism&quot;</span>,<span class="st">&quot;Dormancy and Sporulation&quot;</span>,<span class="st">&quot;Amino Acids and Derivatives&quot;</span>,<span class="st">&quot;Iron acquisition and metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements, Plasmids&quot;</span>,<span class="st">&quot;Cell Division and Cell Cycle&quot;</span>,<span class="st">&quot;Membrane Transport&quot;</span>,<span class="st">&quot;Nitrogen Metabolism&quot;</span>,<span class="st">&quot;Sulfur Metabolism&quot;</span>,<span class="st">&quot;DNA Metabolism&quot;</span>,<span class="st">&quot;Cofactors, Vitamins, Prosthetic Groups, Pigments&quot;</span>,<span class="st">&quot;Fatty Acids, Lipids, and Isoprenoids&quot;</span>,<span class="st">&quot;Virulence, Disease and Defense&quot;</span>,<span class="st">&quot;Potassium metabolism&quot;</span>,<span class="st">&quot;Motility and Chemotaxis&quot;</span>,<span class="st">&quot;Virulence&quot;</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>case_002 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">15</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">9</span>,<span class="dv">7</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">8</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">19</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>  <span class="at">case_002 =</span> case_002,</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>)</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>boxplot1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Veillonella atypica seminalis&quot;</span>, <span class="st">&quot;Reference&quot;</span>),</span>
+<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                          </span>
+<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Category&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.6</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">2.1</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="fu">print</span>(boxplot1) </span>
+<span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot.png&quot;</span>, <span class="at">plot =</span> boxplot1, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"><strong>Code 2. R code to compare the Bifidobacterium longum with the reference genome</strong>
+<p><span style="font-size: 0.8em;"><strong>Code 2. R code to compare the
+Bifidobacterium longum with the reference genome</strong></p>
 </summary>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Carbohydrates&quot;</span>,<span class="st">&quot;Respiration&quot;</span>, <span class="st">&quot;Nucleosides and nucleotides&quot;</span>, <span class="st">&quot;Stress response&quot;</span>,<span class="st">&quot;Protein Metabolism&quot;</span>, <span class="st">&quot;Regulation and Cell signaling&quot;</span>,<span class="st">&quot;Cell Wall and Capsule&quot;</span>,<span class="st">&quot;Miscellaneous&quot;</span>,<span class="st">&quot;Photosynthesis&quot;</span>,<span class="st">&quot;RNA Metabolism&quot;</span>,<span class="st">&quot;Metabolism of Aromatic Compounds&quot;</span>,<span class="st">&quot;Clustering-based subsystems&quot;</span>,<span class="st">&quot;Phosphorus Metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements&quot;</span>,<span class="st">&quot;Secondary Metabolism&quot;</span>,<span class="st">&quot;Dormancy and Sporulation&quot;</span>,<span class="st">&quot;Amino Acids and Derivatives&quot;</span>,<span class="st">&quot;Iron acquisition and metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements, Plasmids&quot;</span>,<span class="st">&quot;Cell Division and Cell Cycle&quot;</span>,<span class="st">&quot;Membrane Transport&quot;</span>,<span class="st">&quot;Nitrogen Metabolism&quot;</span>,<span class="st">&quot;Sulfur Metabolism&quot;</span>,<span class="st">&quot;DNA Metabolism&quot;</span>,<span class="st">&quot;Cofactors, Vitamins, Prosthetic Groups, Pigments&quot;</span>,<span class="st">&quot;Fatty Acids, Lipids, and Isoprenoids&quot;</span>,<span class="st">&quot;Virulence, Disease and Defense&quot;</span>,<span class="st">&quot;Potassium metabolism&quot;</span>,<span class="st">&quot;Motility and Chemotaxis&quot;</span>,<span class="st">&quot;Virulence&quot;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>case_005 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">16</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">14</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">case_005 =</span> case_005,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>boxplot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>),</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bifidobacterium longum&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    <span class="co"># Legend labels</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                          <span class="co"># Legend title</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Category&quot;</span>) <span class="sc">+</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.55</span>)</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot2)</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot2.png&quot;</span>, <span class="at">plot =</span> boxplot1, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Carbohydrates&quot;</span>,<span class="st">&quot;Respiration&quot;</span>, <span class="st">&quot;Nucleosides and nucleotides&quot;</span>, <span class="st">&quot;Stress response&quot;</span>,<span class="st">&quot;Protein Metabolism&quot;</span>, <span class="st">&quot;Regulation and Cell signaling&quot;</span>,<span class="st">&quot;Cell Wall and Capsule&quot;</span>,<span class="st">&quot;Miscellaneous&quot;</span>,<span class="st">&quot;Photosynthesis&quot;</span>,<span class="st">&quot;RNA Metabolism&quot;</span>,<span class="st">&quot;Metabolism of Aromatic Compounds&quot;</span>,<span class="st">&quot;Clustering-based subsystems&quot;</span>,<span class="st">&quot;Phosphorus Metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements&quot;</span>,<span class="st">&quot;Secondary Metabolism&quot;</span>,<span class="st">&quot;Dormancy and Sporulation&quot;</span>,<span class="st">&quot;Amino Acids and Derivatives&quot;</span>,<span class="st">&quot;Iron acquisition and metabolism&quot;</span>,<span class="st">&quot;Phages, Prophages, Transposable elements, Plasmids&quot;</span>,<span class="st">&quot;Cell Division and Cell Cycle&quot;</span>,<span class="st">&quot;Membrane Transport&quot;</span>,<span class="st">&quot;Nitrogen Metabolism&quot;</span>,<span class="st">&quot;Sulfur Metabolism&quot;</span>,<span class="st">&quot;DNA Metabolism&quot;</span>,<span class="st">&quot;Cofactors, Vitamins, Prosthetic Groups, Pigments&quot;</span>,<span class="st">&quot;Fatty Acids, Lipids, and Isoprenoids&quot;</span>,<span class="st">&quot;Virulence, Disease and Defense&quot;</span>,<span class="st">&quot;Potassium metabolism&quot;</span>,<span class="st">&quot;Motility and Chemotaxis&quot;</span>,<span class="st">&quot;Virulence&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>case_005 <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">16</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">14</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>  <span class="at">case_005 =</span> case_005,</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>)</span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" tabindex="-1"></a>boxplot2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span></span>
+<span id="cb2-26"><a href="#cb2-26" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-27"><a href="#cb2-27" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb2-28"><a href="#cb2-28" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>),</span>
+<span id="cb2-29"><a href="#cb2-29" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bifidobacterium longum&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    <span class="co"># Legend labels</span></span>
+<span id="cb2-30"><a href="#cb2-30" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                          <span class="co"># Legend title</span></span>
+<span id="cb2-31"><a href="#cb2-31" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-32"><a href="#cb2-32" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;FUNCTIONAL CATEGORIES COMPARISON BETWEEN STRAINS&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Category&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-33"><a href="#cb2-33" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb2-34"><a href="#cb2-34" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb2-36"><a href="#cb2-36" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb2-37"><a href="#cb2-37" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.55</span>)</span>
+<span id="cb2-38"><a href="#cb2-38" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">size =</span> <span class="dv">3</span>)</span>
+<span id="cb2-40"><a href="#cb2-40" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" tabindex="-1"></a><span class="fu">print</span>(boxplot2)</span>
+<span id="cb2-42"><a href="#cb2-42" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot2.png&quot;</span>, <span class="at">plot =</span> boxplot1, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
-<p>Besides, a functional category for each bacteria was chosen for further studies. In the case of <em>Veillonella atypica seminalis</em> was stress resistance, whereas in the case of <em>Bifidobacterium longum</em> was virulence, disease and defence. For this part the annotated genomes with Prokka were used to obtain the nucleotide and amino acid sequence of the gene selected. Then, using the MAFFT programme, the nucleotide and amino acid sequences were aligned. Finally, by the Jalview website, the results were visualised.</p>
-<p>Moreover, using Rstudio a comparison of the genes encoding for the functional category was made, in order to observe whether there were differences between the genes encoded in the reference and target genomes. Lastly, the GFF + FASTA files for each genome were downloaded from KBase, and imported to Rstudio to analyze the GFF file, creating different variables in which tRNA, mRMA, rRNA and hypothetical proteins were counted, specifically, what the program counts are the lines where these are mentioned, and, after obtaining these results a barplot was printed for <em>Veillonella atypica seminalis</em> and <em>Bifidobacterium longum</em>.</p>
+<p>Besides, a functional category for each bacteria was chosen for
+further studies. In the case of <em>Veillonella atypica seminalis</em>
+was stress resistance, whereas in the case of <em>Bifidobacterium
+longum</em> was virulence, disease and defence. For this part the
+annotated genomes with Prokka were used to obtain the nucleotide and
+amino acid sequence of the gene selected. Then, using the MAFFT
+programme, the nucleotide and amino acid sequences were aligned.
+Finally, by the Jalview website, the results were visualised.</p>
+<p>Moreover, using Rstudio a comparison of the genes encoding for the
+functional category was made, in order to observe whether there were
+differences between the genes encoded in the reference and target
+genomes. Lastly, the GFF + FASTA files for each genome were downloaded
+from KBase, and imported to Rstudio to analyze the GFF file, creating
+different variables in which tRNA, mRMA, rRNA and hypothetical proteins
+were counted, specifically, what the program counts are the lines where
+these are mentioned, and, after obtaining these results a barplot was
+printed for <em>Veillonella atypica seminalis</em> and
+<em>Bifidobacterium longum</em>.</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Code 3. R code to compare the genes encoded within the Stress response functional category for Veillonella atypica seminalis</strong>
+<p><span style="font-size: 0.8em;"> <strong>Code 3. R code to compare
+the genes encoded within the Stress response functional category for
+Veillonella atypica seminalis</strong></p>
 </summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Stress response&quot;</span>, <span class="st">&quot;Oxidative stress&quot;</span>, <span class="st">&quot;Oxidative_stress&quot;</span>, </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Heat Shock&quot;</span>,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Ferric uptake regulator protein&quot;</span>, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Organic hydroperoxidase resistance </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">               transcriptional regulator&quot;</span>, </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>               <span class="st">&quot;Rubrerythrin&quot;</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>case_002 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">case_002 =</span> case_002,</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>info.m<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(info.m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">rev</span>(category))</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>boxplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Veillonella atypica seminalis&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    </span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                        </span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;DIFFERENCE IN THE GENES FOUND IN STRESS RESPONSE CATEGORY&quot;</span>, </span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, </span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Type of genes&quot;</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span> </span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplot3)</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot3.png&quot;</span>, <span class="at">plot =</span> boxplot3, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
-</details>
-<details>
-<summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Code 4. R code to compare the genes encoded within the clustering based subsystems functional category for</strong> <strong><em>Bifidobacterium longum</em></strong>
-</summary>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Clustering-based subsystems&quot;</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;---Clustering-based subsystems---&quot;</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;NusA-TFII&quot;</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;LMPTP_YwIE_cluster&quot;</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Bacterial cell division&quot;</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Cell division protein FtsQ&quot;</span>,</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Cell division protein FstX&quot;</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>case_005 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">case_005 =</span> case_005,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>info.m<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(info.m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">rev</span>(category))</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Create chart with centered title and adjusted numbers on the bars</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>boxplot4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bifidobacterium longum&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    <span class="co"># Etiquetas de la leyenda</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                        <span class="co"># Título de la leyenda</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;DIFFERENCE IN THE GENES FOUND IN CLUSTERING BASED SUBSYSTEMS CATEGORY&quot;</span>, </span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, </span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Type of genes&quot;</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span> </span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(boxplox4) </span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot4.png&quot;</span>, <span class="at">plot =</span> boxplot4, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Stress response&quot;</span>, <span class="st">&quot;Oxidative stress&quot;</span>, <span class="st">&quot;Oxidative_stress&quot;</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>               <span class="st">&quot;Heat Shock&quot;</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>               <span class="st">&quot;Ferric uptake regulator protein&quot;</span>, </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>               <span class="st">&quot;Organic hydroperoxidase resistance </span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="st">               transcriptional regulator&quot;</span>, </span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>               <span class="st">&quot;Rubrerythrin&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>case_002 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>  <span class="at">case_002 =</span> case_002,</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>info.m<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(info.m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">rev</span>(category))</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>boxplot3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Veillonella atypica seminalis&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    </span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                        </span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;DIFFERENCE IN THE GENES FOUND IN STRESS RESPONSE CATEGORY&quot;</span>, </span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, </span>
+<span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Type of genes&quot;</span></span>
+<span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb3-36"><a href="#cb3-36" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-37"><a href="#cb3-37" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb3-38"><a href="#cb3-38" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb3-39"><a href="#cb3-39" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb3-40"><a href="#cb3-40" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span> </span>
+<span id="cb3-41"><a href="#cb3-41" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb3-42"><a href="#cb3-42" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span>
+<span id="cb3-43"><a href="#cb3-43" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" tabindex="-1"></a><span class="fu">print</span>(boxplot3)</span>
+<span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot3.png&quot;</span>, <span class="at">plot =</span> boxplot3, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Code 5. R code to compare the coding and non-coding genes of</strong> <strong><em>Veillonella atypica seminalis</em></strong>
+<p><span style="font-size: 0.8em;"> <strong>Code 4. R code to compare
+the genes encoded within the clustering based subsystems functional
+category for</strong> <strong><em>Bifidobacterium
+longum</em></strong></p>
 </summary>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gff_data002 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;KBase_derived_ARG_B10_bin_002_annotated.gff&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(gff_data002) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;seqname&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;feature&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;frame&quot;</span>, <span class="st">&quot;attribute&quot;</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;tRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>rRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;rRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>hypothetical_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;hypothetical protein&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>mRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;mRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>counts002 <span class="ot">&lt;-</span> <span class="fu">c</span>(tRNA_count002, rRNA_count002, hypothetical_count002, mRNA_count002)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(counts002) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;tRNAs&quot;</span>, <span class="st">&quot;rRNAs&quot;</span>, <span class="st">&quot;Hypothetic protein&quot;</span>, <span class="st">&quot;mRNA&quot;</span>)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>counts002_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">names</span>(counts002),</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Count =</span> counts002</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plot_counts002 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> counts002_df, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Count, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Count), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  </span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>, <span class="st">&quot;lightyellow&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;tRNAs, rRNAs, and GENES ENCODING PROTEINS&quot;</span>,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of RNAs&quot;</span>) <span class="sc">+</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>  </span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_counts002) </span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;counts002_plot.png&quot;</span>, <span class="at">plot =</span> plot_counts002, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>category <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>  <span class="st">&quot;Clustering-based subsystems&quot;</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  <span class="st">&quot;---Clustering-based subsystems---&quot;</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  <span class="st">&quot;NusA-TFII&quot;</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  <span class="st">&quot;LMPTP_YwIE_cluster&quot;</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  <span class="st">&quot;Bacterial cell division&quot;</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  <span class="st">&quot;Cell division protein FtsQ&quot;</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>  <span class="st">&quot;Cell division protein FstX&quot;</span></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>case_005 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a>reference <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>info <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>  <span class="at">category =</span> category,</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>  <span class="at">case_005 =</span> case_005,</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>  <span class="at">reference =</span> reference</span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>)</span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">melt</span>(info, <span class="at">id.vars =</span> <span class="st">&quot;category&quot;</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>info.m <span class="ot">&lt;-</span> <span class="fu">subset</span>(info.m, value <span class="sc">!=</span> <span class="dv">0</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>info.m<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">factor</span>(info.m<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">rev</span>(category))</span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co"># Create chart with centered title and adjusted numbers on the bars</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>boxplot4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(info.m, <span class="fu">aes</span>(<span class="at">fill =</span> variable, <span class="at">x =</span> value, <span class="at">y =</span> category)) <span class="sc">+</span> </span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>, <span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span> </span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(</span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>), </span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bifidobacterium longum&quot;</span>, <span class="st">&quot;Reference&quot;</span>),    <span class="co"># Etiquetas de la leyenda</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;Strain&quot;</span>                        <span class="co"># Título de la leyenda</span></span>
+<span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;DIFFERENCE IN THE GENES FOUND IN CLUSTERING BASED SUBSYSTEMS CATEGORY&quot;</span>, </span>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Values&quot;</span>, </span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Type of genes&quot;</span></span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span> </span>
+<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> value), <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">size =</span> <span class="fl">2.5</span>)</span>
+<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a><span class="fu">print</span>(boxplox4) </span>
+<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;box_plot4.png&quot;</span>, <span class="at">plot =</span> boxplot4, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Code 6. Code 6. R code to compare the coding and non-coding genes of</strong> <strong><em>Bifidobacterium longum</em></strong>
+<p><span style="font-size: 0.8em;"> <strong>Code 5. R code to compare
+the coding and non-coding genes of</strong> <strong><em>Veillonella
+atypica seminalis</em></strong></p>
 </summary>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gff_data005 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;KBase_derived_ARG_B10_bin_005_annotated.gff&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(gff_data005) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;seqname&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;feature&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;frame&quot;</span>, <span class="st">&quot;attribute&quot;</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>tRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;tRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>rRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;rRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>hypothetical_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;hypothetical protein&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>mRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;mRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>counts005 <span class="ot">&lt;-</span> <span class="fu">c</span>(tRNA_count005, rRNA_count005, hypothetical_count005, mRNA_count005)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(counts005) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;tRNAs&quot;</span>, <span class="st">&quot;rRNAs&quot;</span>, <span class="st">&quot;Hypothetic protein&quot;</span>, <span class="st">&quot;mRNA&quot;</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>counts005_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">names</span>(counts005),</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">Count =</span> counts005</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plot_counts005 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> counts005_df, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Count, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Count), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  </span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>, <span class="st">&quot;lightyellow&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;tRNAs, rRNAs, and GENES ENCODING PROTEINS&quot;</span>,</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>,</span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of RNAs&quot;</span>) <span class="sc">+</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
-<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>  </span>
-<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plot_counts005)</span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;counts005_plot.png&quot;</span>, <span class="at">plot =</span> plot_counts005, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>gff_data002 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;KBase_derived_ARG_B10_bin_002_annotated.gff&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">colnames</span>(gff_data002) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;seqname&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;feature&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;frame&quot;</span>, <span class="st">&quot;attribute&quot;</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>tRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;tRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>rRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;rRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>hypothetical_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;hypothetical protein&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>mRNA_count002 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data002[<span class="fu">grep</span>(<span class="st">&quot;mRNA&quot;</span>, gff_data002<span class="sc">$</span>attribute), ])</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>counts002 <span class="ot">&lt;-</span> <span class="fu">c</span>(tRNA_count002, rRNA_count002, hypothetical_count002, mRNA_count002)</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="fu">names</span>(counts002) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;tRNAs&quot;</span>, <span class="st">&quot;rRNAs&quot;</span>, <span class="st">&quot;Hypothetic protein&quot;</span>, <span class="st">&quot;mRNA&quot;</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>counts002_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">names</span>(counts002),</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>  <span class="at">Count =</span> counts002</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>)</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>plot_counts002 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> counts002_df, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Count, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Count), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  </span>
+<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>, <span class="st">&quot;lightyellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;tRNAs, rRNAs, and GENES ENCODING PROTEINS&quot;</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>,</span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of RNAs&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>  </span>
+<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a>  )</span>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="fu">print</span>(plot_counts002) </span>
+<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;counts002_plot.png&quot;</span>, <span class="at">plot =</span> plot_counts002, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
+</details>
+<details>
+<summary style="margin-bottom: 10px;">
+<p><span style="font-size: 0.8em;"> <strong>Code 6. Code 6. R code to
+compare the coding and non-coding genes of</strong>
+<strong><em>Bifidobacterium longum</em></strong></p>
+</summary>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>gff_data005 <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">&quot;KBase_derived_ARG_B10_bin_005_annotated.gff&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>, <span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">colnames</span>(gff_data005) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;seqname&quot;</span>, <span class="st">&quot;source&quot;</span>, <span class="st">&quot;feature&quot;</span>, <span class="st">&quot;start&quot;</span>, <span class="st">&quot;end&quot;</span>, <span class="st">&quot;score&quot;</span>, <span class="st">&quot;strand&quot;</span>, <span class="st">&quot;frame&quot;</span>, <span class="st">&quot;attribute&quot;</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>tRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;tRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>rRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;rRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>hypothetical_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;hypothetical protein&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>mRNA_count005 <span class="ot">&lt;-</span> <span class="fu">nrow</span>(gff_data005[<span class="fu">grep</span>(<span class="st">&quot;mRNA&quot;</span>, gff_data005<span class="sc">$</span>attribute), ])</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>counts005 <span class="ot">&lt;-</span> <span class="fu">c</span>(tRNA_count005, rRNA_count005, hypothetical_count005, mRNA_count005)</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="fu">names</span>(counts005) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;tRNAs&quot;</span>, <span class="st">&quot;rRNAs&quot;</span>, <span class="st">&quot;Hypothetic protein&quot;</span>, <span class="st">&quot;mRNA&quot;</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>counts005_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>  <span class="at">Category =</span> <span class="fu">names</span>(counts005),</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>  <span class="at">Count =</span> counts005</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a>)</span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a>plot_counts005 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> counts005_df, <span class="fu">aes</span>(<span class="at">x =</span> Category, <span class="at">y =</span> Count, <span class="at">fill =</span> Category)) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Count), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span>  </span>
+<span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;skyblue&quot;</span>, <span class="st">&quot;slateblue&quot;</span>, <span class="st">&quot;lightgreen&quot;</span>, <span class="st">&quot;lightyellow&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb6-26"><a href="#cb6-26" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;tRNAs, rRNAs, and GENES ENCODING PROTEINS&quot;</span>,</span>
+<span id="cb6-27"><a href="#cb6-27" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Category&quot;</span>,</span>
+<span id="cb6-28"><a href="#cb6-28" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of RNAs&quot;</span>) <span class="sc">+</span></span>
+<span id="cb6-29"><a href="#cb6-29" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb6-30"><a href="#cb6-30" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb6-31"><a href="#cb6-31" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb6-32"><a href="#cb6-32" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb6-33"><a href="#cb6-33" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>  </span>
+<span id="cb6-34"><a href="#cb6-34" tabindex="-1"></a>  )</span>
+<span id="cb6-35"><a href="#cb6-35" tabindex="-1"></a></span>
+<span id="cb6-36"><a href="#cb6-36" tabindex="-1"></a><span class="fu">print</span>(plot_counts005)</span>
+<span id="cb6-37"><a href="#cb6-37" tabindex="-1"></a></span>
+<span id="cb6-38"><a href="#cb6-38" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;counts005_plot.png&quot;</span>, <span class="at">plot =</span> plot_counts005, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>, <span class="at">bg =</span> <span class="st">&quot;white&quot;</span>)</span></code></pre></div>
 </details>
 </div>
 <div id="practical-8-phylogenetics" class="section level3">
 <h3>Practical 8: Phylogenetics</h3>
-<p>In order to achieve the final part of the project, the Conda software, an environment and package manager, was used. It allows management of the working environments, libraries and tools needed for the project. Through this system, a new working folder that would later contain a number of files was created. The final result of the analysis of all these files was the construction of a phylogenetic tree.</p>
-<p>To proceed, the protein sequences of the target bacteria were copied into a text editor and saved in the new folder. Then, an homologous search for the protein was then conducted using the NCBI BLAST website. This tool designed to compare a query sequence with a database of known sequences, was employed to identify regions of similarity. Specifically, blastp was used to compare the input protein against protein databases. The RefSeq Select proteins database was chosen for this analysis, as it contains high-quality protein sequences and includes the most representative sequences from a wide range of organisms. The dump of sequences and the target one were stored in a file. In particular, the sequence coding for the organic hydroperoxide resistance transcriptional regulator protein (<strong>EMBDAHDF_01639</strong>) of <em>Veillonella atypica seminalis</em> was used to construct the phylogenetic tree. Regarding <em>Bifidobacterium longum</em> (<strong>GBIFMCFE_00735</strong>), the gene coding for signal peptidase I was the one applied to build the cladogram.</p>
-<p>Then, the alignment and the trimming were done and the quality of the sequences was improved. Finally, the construction of a phylogenetic tree containing the 21 sequences was performed in order to be able to compare the differences between species and infer the possible phylogenetic relationships.</p>
+<p>In order to achieve the final part of the project, the Conda
+software, an environment and package manager, was used. It allows
+management of the working environments, libraries and tools needed for
+the project. Through this system, a new working folder that would later
+contain a number of files was created. The final result of the analysis
+of all these files was the construction of a phylogenetic tree.</p>
+<p>To proceed, the protein sequences of the target bacteria were copied
+into a text editor and saved in the new folder. Then, an homologous
+search for the protein was then conducted using the NCBI BLAST website.
+This tool designed to compare a query sequence with a database of known
+sequences, was employed to identify regions of similarity. Specifically,
+blastp was used to compare the input protein against protein databases.
+The RefSeq Select proteins database was chosen for this analysis, as it
+contains high-quality protein sequences and includes the most
+representative sequences from a wide range of organisms. The dump of
+sequences and the target one were stored in a file. In particular, the
+sequence coding for the organic hydroperoxide resistance transcriptional
+regulator protein (<strong>EMBDAHDF_01639</strong>) of <em>Veillonella
+atypica seminalis</em> was used to construct the phylogenetic tree.
+Regarding <em>Bifidobacterium longum</em>
+(<strong>GBIFMCFE_00735</strong>), the gene coding for signal peptidase
+I was the one applied to build the cladogram.</p>
+<p>Then, the alignment and the trimming were done and the quality of the
+sequences was improved. Finally, the construction of a phylogenetic tree
+containing the 21 sequences was performed in order to be able to compare
+the differences between species and infer the possible phylogenetic
+relationships.</p>
 </div>
 </div>
 </div>
 <div id="results" class="section level1">
 <h1>Results</h1>
 <div style="font-size: 12px; text-align: justify;">
-<p>This project was conducted using the ARG_B10 sample, which is a data set result of sequencing a sample of the subject using the Illumina NovaSeq platform. The results aimed to analyse the gut microbiome profile to understand the microbial compositions of the patient, and the relation with health outcomes in early childhood.</p>
+<p>This project was conducted using the ARG_B10 sample, which is a data
+set result of sequencing a sample of the subject using the Illumina
+NovaSeq platform. The results aimed to analyse the gut microbiome
+profile to understand the microbial compositions of the patient, and the
+relation with health outcomes in early childhood.</p>
 <div id="practical-5." class="section level3">
 <h3>Practical 5.</h3>
-<p>The protocol started with an unprocessed patient sample. Thus, as explained in the methodology section, different K-base tools were used to obtain two high-quality metagenome-assembled genomes (MAGs).</p>
-<p>Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading [Figure 1]. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads’ GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).</p>
+<p>The protocol started with an unprocessed patient sample. Thus, as
+explained in the methodology section, different K-base tools were used
+to obtain two high-quality metagenome-assembled genomes (MAGs).</p>
+<p>Firstly, a Fast-QC was executed for raw read quality control and
+analysis. So, in this preliminary stage of the protocol, it was found
+that the first 15 nucleotides had a pattern of fluctuations indicating
+that the quality of the sequence was not optimal in this reading [Figure
+1]. Nonetheless, from this point onward the distribution of the
+different nucleotides was balanced, which suggested a good signal of
+quality of the DNA sequence, indicating absence of artefacts or
+significant deviations. In this Fast-QC, it could also be noted that
+although there are minor variations that suggest potential biases or
+sequencing features, the sequencing reads’ GC distribution generally
+matches with the theoretical expectations (normal Distribution of GC
+content).</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 1. Nucleotide distribution along the sequence.</strong> (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.
+<p><span style="font-size: 0.8em;"> <strong>Figure 1. Nucleotide
+distribution along the sequence.</strong> (A) Nucleotide distribution
+without trimming the sequence. (B) Nucleotide distribution of the
+trimmed sequence.</p>
 </summary>
-<img src="practice%205/figure1.png" title="fig:" alt="Figure 1" />
+<div class="float">
+<img src="practice%205/figure1.png" alt="Figure 1" />
+<div class="figcaption">Figure 1</div>
+</div>
 </details>
-<p>The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level, enhancing it further was not possible [Figure 2].</p>
+<p>The protocol continued with trimmomatic, in which the first 15
+nucleotides were cut to improve the quality of the reading. After the
+execution of this protocol step, another FastQC was fulfilled, and the
+results observed were that the nucleotide distribution was improved, and
+even though the GC content was already at an optimal level, enhancing it
+further was not possible [Figure 2].</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 2. GC content distribution.</strong> (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.
+<p><span style="font-size: 0.8em;"> <strong>Figure 2. GC content
+distribution.</strong> (A) GC content distribution before trimming the
+sequence follows the normal distribution expected. (B) GC content
+distribution after trimming the sequence still follows the theoretical
+distribution.</p>
 </summary>
-<img src="practice%205/figure2.png" title="fig:" alt="Figure 2" />
+<div class="float">
+<img src="practice%205/figure2.png" alt="Figure 2" />
+<div class="figcaption">Figure 2</div>
+</div>
 </details>
-<p>The succeeding step in the protocol was MEGAHIT, resulting in an assembly containing a total of 1922 contigs, with 436 contigs being at least 10,000 bp long. The N50 value was 28.019 suggesting that the assembly is moderately contiguous, with many contigs of smaller size, and, as was previously observed the GC content is relatively high at 54.05%, indicating a good quality.</p>
-<p>Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a &gt;90% completeness and &lt;5% contamination. Hence, the MAGs chosen for the project were bin.002 (<strong>o_Selenomonadales</strong>), with a 99.4% of completeness and 0% of contamination; and bin.005 (<strong>f_Bifidobacteriaceae</strong>) with 100% completeness and 2.42% contamination [Figure 3,4].</p>
+<p>The succeeding step in the protocol was MEGAHIT, resulting in an
+assembly containing a total of 1922 contigs, with 436 contigs being at
+least 10,000 bp long. The N50 value was 28.019 suggesting that the
+assembly is moderately contiguous, with many contigs of smaller size,
+and, as was previously observed the GC content is relatively high at
+54.05%, indicating a good quality.</p>
+<p>Finally, MaxBin was carried out with a 96.1% successfulness in
+binning of the input contigs, which represents 98.6% of the total
+sequence length. Therefore, only a 3.9% fraction of the contigs were
+unbinned, indicating that most of the data was grouped into distinct
+metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to
+determine which will be the bins (MAGs) that are going to be used for
+developing the project. Moreover, the criteria for inclusion in the
+project was a high-quality of the MAG having a &gt;90% completeness and
+&lt;5% contamination. Hence, the MAGs chosen for the project were
+bin.002 (<strong>o_Selenomonadales</strong>), with a 99.4% of
+completeness and 0% of contamination; and bin.005
+(<strong>f_Bifidobacteriaceae</strong>) with 100% completeness and 2.42%
+contamination [Figure 3,4].</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 3. Percentage of completeness and contamination of the chosen MAGs.</strong> MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
+<p><span style="font-size: 0.8em;"> <strong>Figure 3. Percentage of
+completeness and contamination of the chosen MAGs.</strong> MAGs quality
+assessment by observing the percentage of completeness and
+contamination. Bins 002 and 005 were chosen by its high percentage of
+completeness and low percentage of contamination, therefore indicating
+they are two high-quality MAGs.</p>
 </summary>
-<img src="practice%205/figure3.png" title="fig:" alt="Figure 3" />
+<div class="float">
+<img src="practice%205/figure3.png" alt="Figure 3" />
+<div class="figcaption">Figure 3</div>
+</div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 4. Comparison of the distribution of GC content (% GC) of the two bins selected. X-axis represents the GC content percentage and y-axis shows the percentage of segments of 5000 base.</strong> (A) GC content distribution of the bin_002 is around 40% GC, the distribution has a narrower spread, so there is less variation in the GC content in relation to the windows. (B) GC content distribution of the bin_005 is around 60%, the distribution is broader, so there is more variation in GC content among the windows.
+<p><span style="font-size: 0.8em;"> <strong>Figure 4. Comparison of the
+distribution of GC content (% GC) of the two bins selected. X-axis
+represents the GC content percentage and y-axis shows the percentage of
+segments of 5000 base.</strong> (A) GC content distribution of the
+bin_002 is around 40% GC, the distribution has a narrower spread, so
+there is less variation in the GC content in relation to the windows.
+(B) GC content distribution of the bin_005 is around 60%, the
+distribution is broader, so there is more variation in GC content among
+the windows.</p>
 </summary>
-<img src="practice%205/figure4.png" title="fig:" alt="Figure 4" />
+<div class="float">
+<img src="practice%205/figure4.png" alt="Figure 4" />
+<div class="figcaption">Figure 4</div>
+</div>
 </details>
 </div>
 <div id="practical-6." class="section level3">
 <h3>Practical 6.</h3>
-<p>Once the MAGs were selected, the project proceeds with the identification of the species to which the MAGs correspond, using the Prokka K-base tool. Basically, the genome for the bin.002 contains 2033 predicted genes, with 1984 being protein-coding (1299 have known functions, and specifically 603 of these genes are linked to enzymatic activities), whereas the bin.005 contains 1997 predicted genes, with 1940 being protein-coding (1125 have known functions, and specifically 520 of these genes are linked to enzymatic activities). Hence, as soon as the genome assemblies were annotated, a Batch was executed to create a GenomeSet of the species without specifying the names.</p>
-<p>The GTDB classifier was then used to taxonomically classify the MAGs and obtain the genome information. The data used for the taxonomic classification was the ARG_B10_bin002_annotated and ARG_B10_bin005_annotated, which were obtained using the Prokka. So, basically the outcome was the objective taxonomic assignments for the bacterias based on the GTDB. Furthermore, the classification obtained is observed in Figure 5 and 6.</p>
+<p>Once the MAGs were selected, the project proceeds with the
+identification of the species to which the MAGs correspond, using the
+Prokka K-base tool. Basically, the genome for the bin.002 contains 2033
+predicted genes, with 1984 being protein-coding (1299 have known
+functions, and specifically 603 of these genes are linked to enzymatic
+activities), whereas the bin.005 contains 1997 predicted genes, with
+1940 being protein-coding (1125 have known functions, and specifically
+520 of these genes are linked to enzymatic activities). Hence, as soon
+as the genome assemblies were annotated, a Batch was executed to create
+a GenomeSet of the species without specifying the names.</p>
+<p>The GTDB classifier was then used to taxonomically classify the MAGs
+and obtain the genome information. The data used for the taxonomic
+classification was the ARG_B10_bin002_annotated and
+ARG_B10_bin005_annotated, which were obtained using the Prokka. So,
+basically the outcome was the objective taxonomic assignments for the
+bacterias based on the GTDB. Furthermore, the classification obtained is
+observed in Figure 5 and 6.</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 5. Taxonomic classification of the MAGs.</strong> Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs
+<p><span style="font-size: 0.8em;"> <strong>Figure 5. Taxonomic
+classification of the MAGs.</strong> Taxonomic classification according
+to domain, phylum, class, order, family, genus and species of each
+bacteria obtained in the analysis. Taxonomic classification of the
+MAGs</p>
 </summary>
-<img src="practice%206/figure5.png" title="fig:" alt="Figure 5" />
+<div class="float">
+<img src="practice%206/figure5.png" alt="Figure 5" />
+<div class="figcaption">Figure 5</div>
+</div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 6. Taxonomic classification of</strong> <strong><em>Bifidobacterium longum</em></strong> <strong>and</strong> <strong><em>Veillonella atypica seminalis</em></strong>. (A) Taxonomic classification of <em>Veillonella atypica seminalis</em>, it can be seen that the bacteria belongs to the Bacillota phylum, part of the Negativicutes class, within the order of Veillonellales, and is in the Veillonellaceae family. (B) Taxonomic classification of <em>Bifidobacterium longum</em> is in the Actinomycetota phylum, part of the Actinomycetia class, belongs to the Actinomycetales order, is in the Bifidobacteriaceae family, and the genus is Bifidobacterium.
+<p><span style="font-size: 0.8em;"> <strong>Figure 6. Taxonomic
+classification of</strong> <strong><em>Bifidobacterium
+longum</em></strong> <strong>and</strong> <strong><em>Veillonella
+atypica seminalis</em></strong>. (A) Taxonomic classification of
+<em>Veillonella atypica seminalis</em>, it can be seen that the bacteria
+belongs to the Bacillota phylum, part of the Negativicutes class, within
+the order of Veillonellales, and is in the Veillonellaceae family. (B)
+Taxonomic classification of <em>Bifidobacterium longum</em> is in the
+Actinomycetota phylum, part of the Actinomycetia class, belongs to the
+Actinomycetales order, is in the Bifidobacteriaceae family, and the
+genus is Bifidobacterium.</p>
 </summary>
-<img src="practice%206/figure6.png" title="fig:" alt="Figure 6" />
+<div class="float">
+<img src="practice%206/figure6.png" alt="Figure 6" />
+<div class="figcaption">Figure 6</div>
+</div>
 </details>
-<p>After obtaining this information, the genomes of reference were searched in GTDB. Then, annotations obtained by Prokka were <strong>GCA_reference_typestrain.002</strong> and <strong>GCA_reference_typestrain.005</strong>. On the one hand, the first one contains 2129 predicted genes, with 2078 being protein-coding (1315 have known functions, and specifically 600 of these genes are linked to enzymatic activities). On the other hand, the second one contains 2032 predicted genes, with 1946 being protein-coding (1134 have known functions, and specifically 495 of these genes are linked to enzymatic activities).</p>
-<p>Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the <em>Veillonella atypica seminalis</em>, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding <em>Bifidobacterium longum</em>, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796 [Figure 7].</p>
+<p>After obtaining this information, the genomes of reference were
+searched in GTDB. Then, annotations obtained by Prokka were
+<strong>GCA_reference_typestrain.002</strong> and
+<strong>GCA_reference_typestrain.005</strong>. On the one hand, the
+first one contains 2129 predicted genes, with 2078 being protein-coding
+(1315 have known functions, and specifically 600 of these genes are
+linked to enzymatic activities). On the other hand, the second one
+contains 2032 predicted genes, with 1946 being protein-coding (1134 have
+known functions, and specifically 495 of these genes are linked to
+enzymatic activities).</p>
+<p>Finally, a FastANI was computed to assess the nucleotide identity
+between the target strains and the reference ones. For the
+<em>Veillonella atypica seminalis</em>, the ANI Estimated was 99.1958%,
+precisely 650 matches were found in a total of 710. Regarding
+<em>Bifidobacterium longum</em>, the ANI Estimated was 98.8581%,
+precisely 658 matches were found in a total of 796 [Figure 7].</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 7. ANI results comparing the target genomes with the reference ones.</strong>
+<p><span style="font-size: 0.8em;"> <strong>Figure 7. ANI results
+comparing the target genomes with the reference ones.</strong></p>
 </summary>
-<img src="practice%206/figure7.png" title="fig:" alt="Figure 7" />
+<div class="float">
+<img src="practice%206/figure7.png" alt="Figure 7" />
+<div class="figcaption">Figure 7</div>
+</div>
 </details>
 </div>
 <div id="practical-7." class="section level3">
 <h3>Practical 7.</h3>
-<p>Following the completion of the last practical and using the annotations obtained using Prokka, this practical aimed to determine the functional categories encoded in the genome of <em>Veillonella atypica seminalis</em> and <em>Bifidobacterium longum</em> as well as the difference compared to the reference genomes of each bacterium.</p>
-<p>As for <em>Veillonella atypica seminalis</em>, it can be observed that for most of the functional categories, the number of genes is the same. However, there are some categories where the number of genes differs between the target bacterium and the reference genome.</p>
-<p>Regarding <em>Bifidobacterium longum</em>, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome.</p>
-<p>Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For <em>Veillonella atypica seminalis</em>, the selected one was from the Stress Response functional category, concretely encoding an <strong>organic hydroperoxide resistance transcriptional regulator protein involved</strong> in <strong>oxidative stress</strong><span class="citation"><sup>[<a href="#ref-Meireles2022" role="doc-biblioref">4</a>]</sup></span> [Figure 8A]. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure 8C.</p>
-<p>With respect to <em>Bifidobacterium longum</em> the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division.<span class="citation"><sup>[<a href="#ref-Nguyen2023" role="doc-biblioref">5</a>]</sup></span> After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome. For the amino acid sequence, there are also two changes comparing both strains [Figure 9]. Thus, the result probably indicates that this protein has an important role in the cell, since despite the changes found in two amino acids, the rest of the sequence is conserved. This is important, as the properties and functions of the protein will be preserved. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are mostly the same.</p>
-<p>Finally, the functional diversity of the genes and RNAs of the <em>Veillonella atypica seminalis</em> and <em>Bifidobacterium longum</em>, could be observed in Figure 10. Concretely, a clear tendency is evident in both figures, the majority of the genes correspond to mRNA, which encode for proteins. Within this group, a smaller subset encodes hypothetical proteins. In contrast, the number of tRNA, and especially rRNAs, is significantly lower. These results indicate a predominance of genes involved in protein coding over those associated with the structural and functional roles of RNAs.</p>
+<p>Following the completion of the last practical and using the
+annotations obtained using Prokka, this practical aimed to determine the
+functional categories encoded in the genome of <em>Veillonella atypica
+seminalis</em> and <em>Bifidobacterium longum</em> as well as the
+difference compared to the reference genomes of each bacterium.</p>
+<p>As for <em>Veillonella atypica seminalis</em>, it can be observed
+that for most of the functional categories, the number of genes is the
+same. However, there are some categories where the number of genes
+differs between the target bacterium and the reference genome.</p>
+<p>Regarding <em>Bifidobacterium longum</em>, also the number of genes
+between the two strains are the same in most of the functional
+categories. Nonetheless, there are some categories where the number of
+genes differs between the target bacterium and the reference genome.</p>
+<p>Consequently, for each MAG and reference genome, one gene present
+functional category was selected in order to obtain the nucleotide and
+amino acid sequence and perform a Pairwise Sequence Alignment. For
+<em>Veillonella atypica seminalis</em>, the selected one was from the
+Stress Response functional category, concretely encoding an
+<strong>organic hydroperoxide resistance transcriptional regulator
+protein involved</strong> in <strong>oxidative stress</strong><span
+class="citation"><sup>[<a href="#ref-Meireles2022">4</a>]</sup></span>
+[Figure 8A]. After performing the alignment, it can be observed that
+there are some nucleotide changes between the reference and the MAG
+genome, as well as in amino acid residues between the sequences. Thus,
+the results probably indicate that natural selection has occurred
+adapting the MAG strain to stress conditions, and therefore, favoring
+its growth. Moreover, it can be seen that the target bacteria differ
+from the reference in terms of the genes encoded within the stress
+response functional category it can be observed in Figure 8C.</p>
+<p>With respect to <em>Bifidobacterium longum</em> the gene selected was
+from Clustering-based subsystems functional category, concretely the
+gene encoded for a cell division protein FtsQ which is a key component
+of the divisome, the protein complex responsible for bacterial cell
+division<span class="citation"><sup>[<a
+href="#ref-Nguyen2023">5</a>]</sup></span>. After performing the
+alignment between both strains it can be observed that there are two
+nucleotide changes between the reference and the MAG genome. For the
+amino acid sequence, there are also two changes comparing both strains
+[Figure 9]. Thus, the result probably indicates that this protein has an
+important role in the cell, since despite the changes found in two amino
+acids, the rest of the sequence is conserved. This is important, as the
+properties and functions of the protein will be preserved. Furthermore,
+looking at Figure part 3 005 it can be concluded that the genes that are
+encoded in the reference genome and the bacterial genome of our sample
+are mostly the same.</p>
+<p>Finally, the functional diversity of the genes and RNAs of the
+<em>Veillonella atypica seminalis</em> and <em>Bifidobacterium
+longum</em>, could be observed in Figure 10. Concretely, a clear
+tendency is evident in both figures, the majority of the genes
+correspond to mRNA, which encode for proteins. Within this group, a
+smaller subset encodes hypothetical proteins. In contrast, the number of
+tRNA, and especially rRNAs, is significantly lower. These results
+indicate a predominance of genes involved in protein coding over those
+associated with the structural and functional roles of RNAs.</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.</strong> (A)The functional categories found in <em>Veillonella atypica seminalis</em>, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for <em>Bifidobacterium longum</em> and its type strain. C)Within the stress response category, <em>Veillonella atypica seminalis</em> presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, <em>Bifidobacterium longum</em> and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.
+<p><span style="font-size: 0.8em;"> <strong>Figure 8. Functional
+categories present in B10_002 and B10_005 and the differences found
+between the type strains and the sample ones.</strong> (A)The functional
+categories found in <em>Veillonella atypica seminalis</em>, mostly the
+same as the type strain. The values represent the number of genes in
+each category. Some differences in these values are observed between
+species.(B)The same as in A happens for <em>Bifidobacterium longum</em>
+and its type strain. C)Within the stress response category,
+<em>Veillonella atypica seminalis</em> presents different number of
+genes for all the subcategories (Stress response, oxidative stress, heat
+shock, ferric uptake regulator protein, organic hydroperoxidase
+resistance transcriptional regulator, and rubrerythrin). However, the
+reference strain, although the values match those of Veillonella, does
+not show genes for the last three categories (ferric uptake regulator
+protein, organic hydroperoxidase resistance transcriptional regulator,
+and rubrerythrin). (D)Within the clustering based subsystems category,
+<em>Bifidobacterium longum</em> and the type strain coincide in all the
+values for each category, meaning there are no differences in the number
+of genes for this category.</p>
 </summary>
-<img src="practice%207/figure8.png" title="fig:" alt="Figure 8" />
+<div class="float">
+<img src="practice%207/figure8.png" alt="Figure 8" />
+<div class="figcaption">Figure 8</div>
+</div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 9.</strong> <strong><em>Bifidobacterium longum</em></strong> <strong>and type strain alignment.</strong> (A)Nucleotide sequence comparison between <em>Veillonella atypica seminalis</em> and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between <em>Bifidobacterium longum</em> and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between <em>Veillonella atypica seminalis</em> and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between <em>Bifidobacterium longum</em> and its type strain. Two changes, marked with a dot, can be seen between sequences.
+<p><span style="font-size: 0.8em;"> <strong>Figure 9.</strong>
+<strong><em>Bifidobacterium longum</em></strong> <strong>and type strain
+alignment.</strong> (A)Nucleotide sequence comparison between
+<em>Veillonella atypica seminalis</em> and its type strain. Some
+changes, marked with a dot, can be seen between sequences. Gaps are
+marked with a space. (B)Nucleotide sequence comparison between
+<em>Bifidobacterium longum</em> and its type strain. Two changes, marked
+with a dot, can be seen between sequences. Gaps are marked with a space.
+(C)Amino acid sequence comparison between <em>Veillonella atypica
+seminalis</em> and its type strain. Five changes can be seen between
+sequences.(D)Amino acid sequence comparison between <em>Bifidobacterium
+longum</em> and its type strain. Two changes, marked with a dot, can be
+seen between sequences.</p>
 </summary>
-<img src="practice%207/figure9.png" title="fig:" alt="Figure 9" />
+<div class="float">
+<img src="practice%207/figure9.png" alt="Figure 9" />
+<div class="figcaption">Figure 9</div>
+</div>
 </details>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 10. Number of coding and non-coding regions.</strong> The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.
+<p><span style="font-size: 0.8em;"> <strong>Figure 10. Number of coding
+and non-coding regions.</strong> The vast majority of genes encoding
+proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs
+encode hypothetical proteins. On the contrary, the number of tRNA, and
+especially rRNAs, is significantly lower.</p>
 </summary>
-<img src="practice%207/figure10.png" title="fig:" alt="Figure 10" />
+<div class="float">
+<img src="practice%207/figure10.png" alt="Figure 10" />
+<div class="figcaption">Figure 10</div>
+</div>
 </details>
 </div>
 <div id="practical-8." class="section level3">
 <h3>Practical 8.</h3>
-<p>In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed [Figure 11].</p>
-<p>In the case of <em>Veillonella atypica seminalis</em>, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress [Figure 11A].</p>
-<p>In the case of <em>Bifidobacterium longum</em>, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the <strong><em>Bifidobacterium reuteri</em></strong>, <strong><em>Bifidobacterium colobi</em></strong>, <strong><em>Bifidobacterium imperatoris</em></strong>, <strong><em>Bifidobacterium saguini</em></strong>, <strong><em>Bifidobacterium felcineum</em></strong> and <strong><em>Bifidobacterium cebidarum</em></strong> are the ones most evolutively related to the analysed species [Figure 11B].</p>
+<p>In this practical, in order to make a further study of the organisms
+of the sample, a phylogenetic analysis of protein sequences selected was
+performed [Figure 11].</p>
+<p>In the case of <em>Veillonella atypica seminalis</em>, it can be
+observed how the transcriptional regulator protein of resistance to
+organic hyperoxides is comprehended in a group that includes other
+proteins of the same family, predominant in organisms of the
+Veillonellacaea family. In addition, it can be seen that the Bootstrap
+of the branches are high, indicating that most of them have a high
+clustering confidence. Thus, this allows us to affirm that this protein
+studied has been conserved between species, as it plays a crucial role
+in the resistance to oxidative stress [Figure 11A].</p>
+<p>In the case of <em>Bifidobacterium longum</em>, the analysed gene is
+more closely related to genes that are adapted to similar gut
+environments in other species of the Bifidobacteriaceae family. Within
+this family, the <strong><em>Bifidobacterium reuteri</em></strong>,
+<strong><em>Bifidobacterium colobi</em></strong>,
+<strong><em>Bifidobacterium imperatoris</em></strong>,
+<strong><em>Bifidobacterium saguini</em></strong>,
+<strong><em>Bifidobacterium felcineum</em></strong> and
+<strong><em>Bifidobacterium cebidarum</em></strong> are the ones most
+evolutively related to the analysed species [Figure 11B].</p>
 <details>
 <summary style="margin-bottom: 10px;">
-<span style="font-size: 0.8em;"> <strong>Figure 11. Phhylogenetic trees.</strong> (A)<em>Veillonella atypica seminalis</em> phylogenetic tree. (B)<em>Bifidobacterium longum</em> phylogenetic tree.
+<p><span style="font-size: 0.8em;"> <strong>Figure 11. Phhylogenetic
+trees.</strong> (A)<em>Veillonella atypica seminalis</em> phylogenetic
+tree. (B)<em>Bifidobacterium longum</em> phylogenetic tree.</p>
 </summary>
-<img src="practice%208/figure11.png" title="fig:" alt="Figure 11" />
+<div class="float">
+<img src="practice%208/figure11.png" alt="Figure 11" />
+<div class="figcaption">Figure 11</div>
+</div>
 </details>
 </div>
 <div id="discussion" class="section level2">
 <h2>Discussion</h2>
-<p>The gut microbiota has been recently considered to be an environmental factor that could contribute to disease development. Therefore, this study provides a comprehensive characterization and analysis of bacterial strains, offering a holistic approach to help determine the genetic composition, functional potential and evolutionary relationships of the bacteria in the sample.</p>
-<p>Firstly, the quality control performed revealed that the first 15 nucleotides of the raw reads exhibited fluctuations, which was indicative of suboptimal sequencing quality in that region. Therefore, by trimming the first 15 nucleotides, the nucleotide distribution was improved, obtaining just the higher-quality reads. Regarding the GC content, although initially it was high, after trimming it persisted optimal, reinforcing the reliability of the data. Furthermore, the sequence quality modifications were necessary to achieve high-quality assemblies with MEGAHIT, resulting in 1922 contigs. Nonetheless, the 28,019 N50 value supplied further support to the quality of the assembly, suggesting that the genome data was sufficiently continuous for downstream analysis.</p>
-<p>MaxBin and CheckM tools were then used for binning and assessing the completeness and contamination of the assembled genomes. As for the binning process, it was achieved with an outstanding accomplishment rate of 96.1%, indicating that most of the sequences were grouped into the nine different metagenomic bins. Moreover, two of these nine metagenomics reads were selected for the study, concretely bin.002 from the Selenomonadales order and bin.005 corresponding to Bifidobacteriaceae family. The selection of the bins was made according to high completeness and low contamination 99,4% and 0% for the first bin and 100% and 2.42% for the other one.</p>
-<p>Regarding the taxonomic classification, using the GTDB it was confirmed that bin.002 corresponds to <em>Veillonella atypica seminalis</em> and bin.005 to <em>Bifidobacterium longum</em>, which corresponds with previously reported results. Afterall, the taxonomic results obtained with the FastANI revealed a close genetic relationship between the MAGs and their reference genomes, specifically 99.2% for <em>Veillonella atypica seminalis</em> and 98.9% for <em>Bifidobacterium longum</em>.</p>
-<p>The functional analysis displayed interesting insights into the metabolic pathways and genetic composition of both bacterial strains. For <em>Veillonella atypica seminalis</em> most of the functional categories aligned with the reference genome, although some differences were observed in some of the categories. Notably, the number of genes encoded in the carbohydrates functional category was superior in the target strain compared to the reference. This result could indicate that the presence of adaptations in our strain were caused by microbiome or host interactions. Similarly, <em>Bifidobacterium longum</em> showed in the majority of functional categories the same number of genes as the reference organism, nonetheless in certain categories some different number coding genes were found. In the end, these results emphasise the genomic variation within the species and may also indicate strain-specific adaptations.</p>
-<p>Going further with the analysis, the genetic variability was explored by performing a pairwise sequence alignments of selected genes. Specifically, for the <em>Veillonella atypica seminalis</em> the encoding gene selected was an organic hydroperoxide resistance transcriptional regulator, which revealed nucleotide and amino acid changes between the MAG and reference genome. So again, it is reflected that a natural selection process may have occurred to the target strain, enabling the strain to adapt to oxidative stress conditions. Likewise, the signal peptidase I protein of <em>Bifidobacterium longum</em> also displayed nucleotide and amino acid variations, indicating that the strain has undergone selection pressures that have allowed it to enhance its defense systems and adapt to harsh environments. Finally, by carrying out a phylogenetic analysis, it has been possible to reaffirm the results obtained previously. Furthermore, this analysis has enables to obtain an additional context of the evolutionary history of the selected genes. In <em>Veillonella atypica seminalis</em>, the protein studied has been grouped within a clade that contains other proteins from the same family of organisms belonging to the Veillonellaceae family. This allows us to corroborate that there is a high conservation, due to the crucial role of this protein in resistance to oxidative stress. Similarly, in <em>Bifidobacterium longum</em> it has been observed that the protein studied is related to homologous genes of species such as <em>Bifidobacterium reuteri</em><strong>, </strong><em>Bifidobacterium colobi</em>, highlighting the importance of evolutionary pressures on genomic adaptations.</p>
-<p>All things considered, our investigation has provided significant information on the functional potential and genetic diversity of the target microorganisms. As mentioned above, the impact of evolutionary pressures on the differences in gene content between MAGs and reference genomes has been reflected. In addition, the results have shown the effect of phenomena such as genetic plasticity and functional adaptability in bacteria. Finally, it should be noted that further research focusing on interactions between strains and environmental influences may provide a clearer understanding of the role of bacteria in health and disease, as well as possible therapeutic applications.</p>
+<p>The gut microbiota has been recently considered to be an
+environmental factor that could contribute to disease development.
+Therefore, this study provides a comprehensive characterization and
+analysis of bacterial strains, offering a holistic approach to help
+determine the genetic composition, functional potential and evolutionary
+relationships of the bacteria in the sample.</p>
+<p>Firstly, the quality control performed revealed that the first 15
+nucleotides of the raw reads exhibited fluctuations, which was
+indicative of suboptimal sequencing quality in that region. Therefore,
+by trimming the first 15 nucleotides, the nucleotide distribution was
+improved, obtaining just the higher-quality reads. Regarding the GC
+content, although initially it was high, after trimming it persisted
+optimal, reinforcing the reliability of the data. Furthermore, the
+sequence quality modifications were necessary to achieve high-quality
+assemblies with MEGAHIT, resulting in 1922 contigs. Nonetheless, the
+28,019 N50 value supplied further support to the quality of the
+assembly, suggesting that the genome data was sufficiently continuous
+for downstream analysis.</p>
+<p>MaxBin and CheckM tools were then used for binning and assessing the
+completeness and contamination of the assembled genomes. As for the
+binning process, it was achieved with an outstanding accomplishment rate
+of 96.1%, indicating that most of the sequences were grouped into the
+nine different metagenomic bins. Moreover, two of these nine
+metagenomics reads were selected for the study, concretely bin.002 from
+the Selenomonadales order and bin.005 corresponding to
+Bifidobacteriaceae family. The selection of the bins was made according
+to high completeness and low contamination 99,4% and 0% for the first
+bin and 100% and 2.42% for the other one.</p>
+<p>Regarding the taxonomic classification, using the GTDB it was
+confirmed that bin.002 corresponds to <em>Veillonella atypica
+seminalis</em> and bin.005 to <em>Bifidobacterium longum</em>, which
+corresponds with previously reported results. Afterall, the taxonomic
+results obtained with the FastANI revealed a close genetic relationship
+between the MAGs and their reference genomes, specifically 99.2% for
+<em>Veillonella atypica seminalis</em> and 98.9% for <em>Bifidobacterium
+longum</em>.</p>
+<p>The functional analysis displayed interesting insights into the
+metabolic pathways and genetic composition of both bacterial strains.
+For <em>Veillonella atypica seminalis</em> most of the functional
+categories aligned with the reference genome, although some differences
+were observed in some of the categories. Notably, the number of genes
+encoded in the carbohydrates functional category was superior in the
+target strain compared to the reference. This result could indicate that
+the presence of adaptations in our strain were caused by microbiome or
+host interactions. Similarly, <em>Bifidobacterium longum</em> showed in
+the majority of functional categories the same number of genes as the
+reference organism, nonetheless in certain categories some different
+number coding genes were found. In the end, these results emphasise the
+genomic variation within the species and may also indicate
+strain-specific adaptations.</p>
+<p>Going further with the analysis, the genetic variability was explored
+by performing a pairwise sequence alignments of selected genes.
+Specifically, for the <em>Veillonella atypica seminalis</em> the
+encoding gene selected was an organic hydroperoxide resistance
+transcriptional regulator, which revealed nucleotide and amino acid
+changes between the MAG and reference genome. So again, it is reflected
+that a natural selection process may have occurred to the target strain,
+enabling the strain to adapt to oxidative stress conditions. Likewise,
+the signal peptidase I protein of <em>Bifidobacterium longum</em> also
+displayed nucleotide and amino acid variations, indicating that the
+strain has undergone selection pressures that have allowed it to enhance
+its defense systems and adapt to harsh environments. Finally, by
+carrying out a phylogenetic analysis, it has been possible to reaffirm
+the results obtained previously. Furthermore, this analysis has enables
+to obtain an additional context of the evolutionary history of the
+selected genes. In <em>Veillonella atypica seminalis</em>, the protein
+studied has been grouped within a clade that contains other proteins
+from the same family of organisms belonging to the Veillonellaceae
+family. This allows us to corroborate that there is a high conservation,
+due to the crucial role of this protein in resistance to oxidative
+stress. Similarly, in <em>Bifidobacterium longum</em> it has been
+observed that the protein studied is related to homologous genes of
+species such as <em>Bifidobacterium reuteri</em><strong>,</strong>
+<em>Bifidobacterium colobi</em>, highlighting the importance of
+evolutionary pressures on genomic adaptations.</p>
+<p>All things considered, our investigation has provided significant
+information on the functional potential and genetic diversity of the
+target microorganisms. As mentioned above, the impact of evolutionary
+pressures on the differences in gene content between MAGs and reference
+genomes has been reflected. In addition, the results have shown the
+effect of phenomena such as genetic plasticity and functional
+adaptability in bacteria. Finally, it should be noted that further
+research focusing on interactions between strains and environmental
+influences may provide a clearer understanding of the role of bacteria
+in health and disease, as well as possible therapeutic applications.</p>
 </div>
 </div>
 </div>
 <div id="conclusions" class="section level1">
 <h1>Conclusions</h1>
 <div style="font-size: 12px; text-align: justify;">
-<p>In conclusion, this project allowed a detailed characterization of the bacterial strains present in the gut microbiome sample, revealing both their genetic composition and functional potential, as well as the evolutionary relationships between them. On the one hand, quality and assembly analyses confirmed the reliability of the data. On the other hand, binning tools allowed an accurate taxonomic classification. Altogether, the results confirmed that two of the species found in the sample were <em>Veillonella atypica seminalis</em> and <em>Bifidobacterium longum</em>.</p>
-<p>Besides, there were also genomic variations and specific adaptations in both strains with respect to the reference sequences. From the results obtained, it can be infered that it is due to evolutionary pressures. Nevertheless, further research should be done in order to provide a deeper understanding in this field and maybe generate potential therapeutic applications in the near future.</p>
+<p>In conclusion, this project allowed a detailed characterization of
+the bacterial strains present in the gut microbiome sample, revealing
+both their genetic composition and functional potential, as well as the
+evolutionary relationships between them. On the one hand, quality and
+assembly analyses confirmed the reliability of the data. On the other
+hand, binning tools allowed an accurate taxonomic classification.
+Altogether, the results confirmed that two of the species found in the
+sample were <em>Veillonella atypica seminalis</em> and
+<em>Bifidobacterium longum</em>.</p>
+<p>Besides, there were also genomic variations and specific adaptations
+in both strains with respect to the reference sequences. From the
+results obtained, it can be infered that it is due to evolutionary
+pressures. Nevertheless, further research should be done in order to
+provide a deeper understanding in this field and maybe generate
+potential therapeutic applications in the near future.</p>
 </div>
 </div>
 <div id="bibliography" class="section level1 unnumbered">
 <h1 class="unnumbered">Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="1">
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="1">
 <div id="ref-Requena2021" class="csl-entry">
-<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Requena, T., &amp; Velasco, M. (2021). The human microbiome in sickness and in health. <em>Revista Clínica Española</em>, <em>221</em>(4), 233–240. <a href="https://doi.org/10.1016/j.rceng.2019.07.018">https://doi.org/10.1016/j.rceng.2019.07.018</a></div>
+<div class="csl-left-margin">[1] </div><div
+class="csl-right-inline">Requena, T., &amp; Velasco, M. (2021). The
+human microbiome in sickness and in health. <em>Revista Clínica
+Española</em>, <em>221</em>(4), 233–240. <a
+href="https://doi.org/10.1016/j.rceng.2019.07.018">https://doi.org/10.1016/j.rceng.2019.07.018</a></div>
 </div>
 <div id="ref-Mashima2013" class="csl-entry">
-<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Mashima, I., &amp; Nakazawa, F. (2013). A review on the characterization of a novel oral veillonella species, v. Tobetsuensis, and its role in oral biofilm formation. <em>Journal of Oral Biosciences</em>, <em>55</em>(4), 184–190. <a href="https://doi.org/10.1016/j.job.2013.07.002">https://doi.org/10.1016/j.job.2013.07.002</a></div>
+<div class="csl-left-margin">[2] </div><div
+class="csl-right-inline">Mashima, I., &amp; Nakazawa, F. (2013). A
+review on the characterization of a novel oral veillonella species, v.
+Tobetsuensis, and its role in oral biofilm formation. <em>Journal of
+Oral Biosciences</em>, <em>55</em>(4), 184–190. <a
+href="https://doi.org/10.1016/j.job.2013.07.002">https://doi.org/10.1016/j.job.2013.07.002</a></div>
 </div>
 <div id="ref-Yao2021" class="csl-entry">
-<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Yao, S., Zhao, Z., Wang, W., &amp; Liu, X. (2021). Bifidobacterium longum: Protection against inflammatory bowel disease. <em>Journal of Immunology Research</em>, <em>2021</em>, 8030297. <a href="https://doi.org/10.1155/2021/8030297">https://doi.org/10.1155/2021/8030297</a></div>
+<div class="csl-left-margin">[3] </div><div
+class="csl-right-inline">Yao, S., Zhao, Z., Wang, W., &amp; Liu, X.
+(2021). Bifidobacterium longum: Protection against inflammatory bowel
+disease. <em>Journal of Immunology Research</em>, <em>2021</em>,
+8030297. <a
+href="https://doi.org/10.1155/2021/8030297">https://doi.org/10.1155/2021/8030297</a></div>
 </div>
 <div id="ref-Meireles2022" class="csl-entry">
-<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Meireles, D. A., Silva Neto, J. F. da, Domingos, R. M., Alegria, T. G. P., Santos, L. C. M., &amp; Netto, L. E. S. (2022). Ohr - OhrR, a neglected and highly efficient antioxidant system: Structure, catalysis, phylogeny, regulation, and physiological roles. <em>Free Radical Biology and Medicine</em>, <em>185</em>, 6–24. <a href="https://doi.org/10.1016/j.freeradbiomed.2022.03.008">https://doi.org/10.1016/j.freeradbiomed.2022.03.008</a></div>
+<div class="csl-left-margin">[4] </div><div
+class="csl-right-inline">Meireles, D. A., Silva Neto, J. F. da,
+Domingos, R. M., Alegria, T. G. P., Santos, L. C. M., &amp; Netto, L. E.
+S. (2022). Ohr - OhrR, a neglected and highly efficient antioxidant
+system: Structure, catalysis, phylogeny, regulation, and physiological
+roles. <em>Free Radical Biology and Medicine</em>, <em>185</em>, 6–24.
+<a
+href="https://doi.org/10.1016/j.freeradbiomed.2022.03.008">https://doi.org/10.1016/j.freeradbiomed.2022.03.008</a></div>
 </div>
 <div id="ref-Nguyen2023" class="csl-entry">
-<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Nguyen, H. T. V., Chen, X., Parada, C., Luo, A. C., Shih, O., Jeng, U. S., … Ma, C. (2023). Structure of the heterotrimeric membrane protein complex FtsB-FtsL-FtsQ of the bacterial divisome. <em>Nature Communications</em>, <em>14</em>(1), 1903. <a href="https://doi.org/10.1038/s41467-023-37058-0">https://doi.org/10.1038/s41467-023-37058-0</a></div>
+<div class="csl-left-margin">[5] </div><div
+class="csl-right-inline">Nguyen, H. T. V., Chen, X., Parada, C., Luo, A.
+C., Shih, O., Jeng, U. S., … Ma, C. (2023). Structure of the
+heterotrimeric membrane protein complex FtsB-FtsL-FtsQ of the bacterial
+divisome. <em>Nature Communications</em>, <em>14</em>(1), 1903. <a
+href="https://doi.org/10.1038/s41467-023-37058-0">https://doi.org/10.1038/s41467-023-37058-0</a></div>
 </div>
 </div>
 </div>

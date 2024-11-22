@@ -439,13 +439,11 @@ This project was conducted using the ARG_B10 sample, which is a data set result 
 
 The protocol started with an unprocessed patient sample. Thus, as explained in the methodology section, different K-base tools were used to obtain two high-quality metagenome-assembled genomes (MAGs).
 
-Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading \[Figure 1\]. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads' GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).
+Firstly, a Fast-QC was executed for raw read quality control and analysis. So, in this preliminary stage of the protocol, it was found that the first 15 nucleotides had a pattern of fluctuations indicating that the quality of the sequence was not optimal in this reading [Figure 1]. Nonetheless, from this point onward the distribution of the different nucleotides was balanced, which suggested a good signal of quality of the DNA sequence, indicating absence of artefacts or significant deviations. In this Fast-QC, it could also be noted that although there are minor variations that suggest potential biases or sequencing features, the sequencing reads' GC distribution generally matches with the theoretical expectations (normal Distribution of GC content).
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.
 
 </summary>
 
@@ -453,13 +451,11 @@ Firstly, a Fast-QC was executed for raw read quality control and analysis. So, i
 
 </details>
 
-The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level, enhancing it further was not possible \[Figure 2\].
+The protocol continued with trimmomatic, in which the first 15 nucleotides were cut to improve the quality of the reading. After the execution of this protocol step, another FastQC was fulfilled, and the results observed were that the nucleotide distribution was improved, and even though the GC content was already at an optimal level, enhancing it further was not possible [Figure 2].
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.
 
 </summary>
 
@@ -469,13 +465,11 @@ The protocol continued with trimmomatic, in which the first 15 nucleotides were 
 
 The succeeding step in the protocol was MEGAHIT, resulting in an assembly containing a total of 1922 contigs, with 436 contigs being at least 10,000 bp long. The N50 value was 28.019 suggesting that the assembly is moderately contiguous, with many contigs of smaller size, and, as was previously observed the GC content is relatively high at 54.05%, indicating a good quality.
 
-Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a \>90% completeness and \<5% contamination. Hence, the MAGs chosen for the project were bin.002 (**o_Selenomonadales**), with a 99.4% of completeness and 0% of contamination; and bin.005 (**f_Bifidobacteriaceae**) with 100% completeness and 2.42% contamination \[Figure 3,4\].
+Finally, MaxBin was carried out with a 96.1% successfulness in binning of the input contigs, which represents 98.6% of the total sequence length. Therefore, only a 3.9% fraction of the contigs were unbinned, indicating that most of the data was grouped into distinct metagenomic bins. Thus, 9 bins were created. The CheckM tool was used to determine which will be the bins (MAGs) that are going to be used for developing the project. Moreover, the criteria for inclusion in the project was a high-quality of the MAG having a \>90% completeness and \<5% contamination. Hence, the MAGs chosen for the project were bin.002 (**o_Selenomonadales**), with a 99.4% of completeness and 0% of contamination; and bin.005 (**f_Bifidobacteriaceae**) with 100% completeness and 2.42% contamination [Figure 3,4].
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
 
 </summary>
 
@@ -503,9 +497,7 @@ The GTDB classifier was then used to taxonomically classify the MAGs and obtain 
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs
 
 </summary>
 
@@ -527,13 +519,11 @@ The GTDB classifier was then used to taxonomically classify the MAGs and obtain 
 
 After obtaining this information, the genomes of reference were searched in GTDB. Then, annotations obtained by Prokka were **GCA_reference_typestrain.002** and **GCA_reference_typestrain.005**. On the one hand, the first one contains 2129 predicted genes, with 2078 being protein-coding (1315 have known functions, and specifically 600 of these genes are linked to enzymatic activities). On the other hand, the second one contains 2032 predicted genes, with 1946 being protein-coding (1134 have known functions, and specifically 495 of these genes are linked to enzymatic activities).
 
-Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the *Veillonella atypica seminalis*, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding *Bifidobacterium longum*, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796 \[Figure 7\].
+Finally, a FastANI was computed to assess the nucleotide identity between the target strains and the reference ones. For the *Veillonella atypica seminalis*, the ANI Estimated was 99.1958%, precisely 650 matches were found in a total of 710. Regarding *Bifidobacterium longum*, the ANI Estimated was 98.8581%, precisely 658 matches were found in a total of 796 [Figure 7].
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**
 
 </summary>
 
@@ -549,17 +539,15 @@ As for *Veillonella atypica seminalis*, it can be observed that for most of the 
 
 Regarding *Bifidobacterium longum*, also the number of genes between the two strains are the same in most of the functional categories. Nonetheless, there are some categories where the number of genes differs between the target bacterium and the reference genome.
 
-Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*, the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress** [@Meireles2022] \[Figure 8A\]. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure 8C.
+Consequently, for each MAG and reference genome, one gene present functional category was selected in order to obtain the nucleotide and amino acid sequence and perform a Pairwise Sequence Alignment. For *Veillonella atypica seminalis*, the selected one was from the Stress Response functional category, concretely encoding an **organic hydroperoxide resistance transcriptional regulator protein involved** in **oxidative stress** [@Meireles2022] [Figure 8A]. After performing the alignment, it can be observed that there are some nucleotide changes between the reference and the MAG genome, as well as in amino acid residues between the sequences. Thus, the results probably indicate that natural selection has occurred adapting the MAG strain to stress conditions, and therefore, favoring its growth. Moreover, it can be seen that the target bacteria differ from the reference in terms of the genes encoded within the stress response functional category it can be observed in Figure 8C.
 
-With respect to *Bifidobacterium longum* the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division [@Nguyen2023]. After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome. For the amino acid sequence, there are also two changes comparing both strains \[Figure 9\]. Thus, the result probably indicates that this protein has an important role in the cell, since despite the changes found in two amino acids, the rest of the sequence is conserved. This is important, as the properties and functions of the protein will be preserved. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are mostly the same.
+With respect to *Bifidobacterium longum* the gene selected was from Clustering-based subsystems functional category, concretely the gene encoded for a cell division protein FtsQ which is a key component of the divisome, the protein complex responsible for bacterial cell division [@Nguyen2023]. After performing the alignment between both strains it can be observed that there are two nucleotide changes between the reference and the MAG genome. For the amino acid sequence, there are also two changes comparing both strains [Figure 9]. Thus, the result probably indicates that this protein has an important role in the cell, since despite the changes found in two amino acids, the rest of the sequence is conserved. This is important, as the properties and functions of the protein will be preserved. Furthermore, looking at Figure part 3 005 it can be concluded that the genes that are encoded in the reference genome and the bacterial genome of our sample are mostly the same.
 
 Finally, the functional diversity of the genes and RNAs of the *Veillonella atypica seminalis* and *Bifidobacterium longum*, could be observed in Figure 10. Concretely, a clear tendency is evident in both figures, the majority of the genes correspond to mRNA, which encode for proteins. Within this group, a smaller subset encodes hypothetical proteins. In contrast, the number of tRNA, and especially rRNAs, is significantly lower. These results indicate a predominance of genes involved in protein coding over those associated with the structural and functional roles of RNAs.
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.
 
 </summary>
 
@@ -569,9 +557,7 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.
 
 </summary>
 
@@ -581,9 +567,7 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.
 
 </summary>
 
@@ -593,17 +577,15 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 ### Practical 8.
 
-In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed \[Figure 11\].
+In this practical, in order to make a further study of the organisms of the sample, a phylogenetic analysis of protein sequences selected was performed [Figure 11].
 
-In the case of *Veillonella atypica seminalis*, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress \[Figure 11A\].
+In the case of *Veillonella atypica seminalis*, it can be observed how the transcriptional regulator protein of resistance to organic hyperoxides is comprehended in a group that includes other proteins of the same family, predominant in organisms of the Veillonellacaea family. In addition, it can be seen that the Bootstrap of the branches are high, indicating that most of them have a high clustering confidence. Thus, this allows us to affirm that this protein studied has been conserved between species, as it plays a crucial role in the resistance to oxidative stress [Figure 11A].
 
-In the case of *Bifidobacterium longum*, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the ***Bifidobacterium reuteri***, ***Bifidobacterium colobi***, ***Bifidobacterium imperatoris***, ***Bifidobacterium saguini***, ***Bifidobacterium felcineum*** and ***Bifidobacterium cebidarum*** are the ones most evolutively related to the analysed species \[Figure 11B\].
+In the case of *Bifidobacterium longum*, the analysed gene is more closely related to genes that are adapted to similar gut environments in other species of the Bifidobacteriaceae family. Within this family, the ***Bifidobacterium reuteri***, ***Bifidobacterium colobi***, ***Bifidobacterium imperatoris***, ***Bifidobacterium saguini***, ***Bifidobacterium felcineum*** and ***Bifidobacterium cebidarum*** are the ones most evolutively related to the analysed species [Figure 11B].
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.
 
 </summary>
 
