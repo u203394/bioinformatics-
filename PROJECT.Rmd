@@ -90,11 +90,7 @@ In Rstudio, **table_002** and **table_005** were created, allowing the read of f
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;">**Code 1. R code to compare the Veillonella atypica seminalis with the reference genome.**
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;">**Code 1. R code to compare the Veillonella atypica seminalis with the reference genome.**</summary>
 
 ```{r eval=FALSE}
 library(ggplot2)
@@ -141,11 +137,7 @@ ggsave("box_plot.png", plot = boxplot1, width = 7, height = 5, dpi = 300, bg = "
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;">**Code 2. R code to compare the Bifidobacterium longum with the reference genome**
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;">**Code 2. R code to compare the Bifidobacterium longum with the reference genome**</summary>
 
 ```{r eval=FALSE}
 library(ggplot2)
@@ -201,11 +193,7 @@ Moreover, using Rstudio a comparison of the genes encoding for the functional ca
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Code 3. R code to compare the genes encoded within the Stress response functional category for Veillonella atypica seminalis**
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Code 3. R code to compare the genes encoded within the Stress response functional category for Veillonella atypica seminalis**</summary>
 
 ```{r eval=FALSE}
 category <- c("Stress response", "Oxidative stress", "Oxidative_stress", 
@@ -260,11 +248,7 @@ ggsave("box_plot3.png", plot = boxplot3, width = 7, height = 5, dpi = 300, bg = 
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Code 4. R code to compare the genes encoded within the clustering based subsystems functional category for** ***Bifidobacterium longum***
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Code 4. R code to compare the genes encoded within the clustering based subsystems functional category for** ***Bifidobacterium longum***</summary>
 
 ```{r eval=FALSE}
 category <- c(
@@ -322,11 +306,7 @@ ggsave("box_plot4.png", plot = boxplot4, width = 7, height = 5, dpi = 300, bg = 
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Code 5. R code to compare the coding and non-coding genes of** ***Veillonella atypica seminalis***
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Code 5. R code to compare the coding and non-coding genes of** ***Veillonella atypica seminalis***</summary>
 
 ```{r eval=FALSE}
 gff_data002 <- read.table("KBase_derived_ARG_B10_bin_002_annotated.gff", sep = "\t", header = FALSE, quote = "")
@@ -372,11 +352,7 @@ ggsave("counts002_plot.png", plot = plot_counts002, width = 7, height = 5, dpi =
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Code 6. Code 6. R code to compare the coding and non-coding genes of** ***Bifidobacterium longum***
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Code 6. R code to compare the coding and non-coding genes of** ***Bifidobacterium longum***</summary>
 
 ```{r eval=FALSE}
 gff_data005 <- read.table("KBase_derived_ARG_B10_bin_005_annotated.gff", sep = "\t", header = FALSE, quote = "")
@@ -443,9 +419,7 @@ Firstly, a Fast-QC was executed for raw read quality control and analysis. So, i
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 1. Nucleotide distribution along the sequence.** (A) Nucleotide distribution without trimming the sequence. (B) Nucleotide distribution of the trimmed sequence.</summary>
 
 ![Figure 1](practice%205/figure1.png)
 
@@ -455,9 +429,7 @@ The protocol continued with trimmomatic, in which the first 15 nucleotides were 
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 2. GC content distribution.** (A) GC content distribution before trimming the sequence follows the normal distribution expected. (B) GC content distribution after trimming the sequence still follows the theoretical distribution.</summary>
 
 ![Figure 2](practice%205/figure2.png)
 
@@ -469,9 +441,7 @@ Finally, MaxBin was carried out with a 96.1% successfulness in binning of the in
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 3. Percentage of completeness and contamination of the chosen MAGs.** MAGs quality assessment by observing the percentage of completeness and contamination. Bins 002 and 005 were chosen by its high percentage of completeness and low percentage of contamination, therefore indicating they are two high-quality MAGs.</summary>
 
 ![Figure 3](practice%205/figure3.png)
 
@@ -479,11 +449,7 @@ Finally, MaxBin was carried out with a 96.1% successfulness in binning of the in
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 4. Comparison of the distribution of GC content (% GC) of the two bins selected. X-axis represents the GC content percentage and y-axis shows the percentage of segments of 5000 base.** (A) GC content distribution of the bin_002 is around 40% GC, the distribution has a narrower spread, so there is less variation in the GC content in relation to the windows. (B) GC content distribution of the bin_005 is around 60%, the distribution is broader, so there is more variation in GC content among the windows.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 4. Comparison of the distribution of GC content (% GC) of the two bins selected. X-axis represents the GC content percentage and y-axis shows the percentage of segments of 5000 base.** (A) GC content distribution of the bin_002 is around 40% GC, the distribution has a narrower spread, so there is less variation in the GC content in relation to the windows. (B) GC content distribution of the bin_005 is around 60%, the distribution is broader, so there is more variation in GC content among the windows.</summary>
 
 ![Figure 4](practice%205/figure4.png)
 
@@ -497,9 +463,7 @@ The GTDB classifier was then used to taxonomically classify the MAGs and obtain 
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 5. Taxonomic classification of the MAGs.** Taxonomic classification according to domain, phylum, class, order, family, genus and species of each bacteria obtained in the analysis. Taxonomic classification of the MAGs</summary>
 
 ![Figure 5](practice%206/figure5.png)
 
@@ -507,11 +471,7 @@ The GTDB classifier was then used to taxonomically classify the MAGs and obtain 
 
 <details>
 
-<summary style="margin-bottom: 10px;">
-
-<span style="font-size: 0.8em;"> **Figure 6. Taxonomic classification of** ***Bifidobacterium longum*** **and** ***Veillonella atypica seminalis***. (A) Taxonomic classification of *Veillonella atypica seminalis*, it can be seen that the bacteria belongs to the Bacillota phylum, part of the Negativicutes class, within the order of Veillonellales, and is in the Veillonellaceae family. (B) Taxonomic classification of *Bifidobacterium longum* is in the Actinomycetota phylum, part of the Actinomycetia class, belongs to the Actinomycetales order, is in the Bifidobacteriaceae family, and the genus is Bifidobacterium.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 6. Taxonomic classification of** ***Bifidobacterium longum*** **and** ***Veillonella atypica seminalis***. (A) Taxonomic classification of *Veillonella atypica seminalis*, it can be seen that the bacteria belongs to the Bacillota phylum, part of the Negativicutes class, within the order of Veillonellales, and is in the Veillonellaceae family. (B) Taxonomic classification of *Bifidobacterium longum* is in the Actinomycetota phylum, part of the Actinomycetia class, belongs to the Actinomycetales order, is in the Bifidobacteriaceae family, and the genus is Bifidobacterium.</summary>
 
 ![Figure 6](practice%206/figure6.png)
 
@@ -523,9 +483,7 @@ Finally, a FastANI was computed to assess the nucleotide identity between the ta
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 7. ANI results comparing the target genomes with the reference ones.**</summary>
 
 ![Figure 7](practice%206/figure7.png)
 
@@ -547,9 +505,7 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 8. Functional categories present in B10_002 and B10_005 and the differences found between the type strains and the sample ones.** (A)The functional categories found in *Veillonella atypica seminalis*, mostly the same as the type strain. The values represent the number of genes in each category. Some differences in these values are observed between species.(B)The same as in A happens for *Bifidobacterium longum* and its type strain. C)Within the stress response category, *Veillonella atypica seminalis* presents different number of genes for all the subcategories (Stress response, oxidative stress, heat shock, ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). However, the reference strain, although the values match those of Veillonella, does not show genes for the last three categories (ferric uptake regulator protein, organic hydroperoxidase resistance transcriptional regulator, and rubrerythrin). (D)Within the clustering based subsystems category, *Bifidobacterium longum* and the type strain coincide in all the values for each category, meaning there are no differences in the number of genes for this category.</summary>
 
 ![Figure 8](practice%207/figure8.png)
 
@@ -557,9 +513,7 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 9.** ***Bifidobacterium longum*** **and type strain alignment.** (A)Nucleotide sequence comparison between *Veillonella atypica seminalis* and its type strain. Some changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (B)Nucleotide sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences. Gaps are marked with a space. (C)Amino acid sequence comparison between *Veillonella atypica seminalis* and its type strain. Five changes can be seen between sequences.(D)Amino acid sequence comparison between *Bifidobacterium longum* and its type strain. Two changes, marked with a dot, can be seen between sequences.</summary>
 
 ![Figure 9](practice%207/figure9.png)
 
@@ -567,9 +521,7 @@ Finally, the functional diversity of the genes and RNAs of the *Veillonella atyp
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 10. Number of coding and non-coding regions.** The vast majority of genes encoding proteins correspond to mRNAs. Thereafter, a smaller subset of RNAs encode hypothetical proteins. On the contrary, the number of tRNA, and especially rRNAs, is significantly lower.</summary>
 
 ![Figure 10](practice%207/figure10.png)
 
@@ -585,9 +537,7 @@ In the case of *Bifidobacterium longum*, the analysed gene is more closely relat
 
 <details>
 
-<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.
-
-</summary>
+<summary style="margin-bottom: 10px;"><span style="font-size: 0.8em;"> **Figure 11. Phhylogenetic trees.** (A)*Veillonella atypica seminalis* phylogenetic tree. (B)*Bifidobacterium longum* phylogenetic tree.</summary>
 
 ![Figure 11](practice%208/figure11.png)
 
